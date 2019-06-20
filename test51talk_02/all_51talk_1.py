@@ -1,9 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #encoding:utf-8
 
 __author__ = 'zhangbo'
 
-# import sys
+import sys
 # sys.path.append("/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages")
 
 #初始化设置编码格式
@@ -57,7 +57,7 @@ def creatsuite():
     testunit = unittest.TestSuite()
 
     '''启动页弹出层切换'''
-    # testunit.addTest(test_startPage.TestStartPage("test_start_page"))
+    testunit.addTest(test_startPage.TestStartPage("test_start_page"))
 
     '''主站模块TAB切换'''
     # testunit.addTest(test_homePage.TestHomePage("test_homepage_tabpage_switch"))
@@ -81,7 +81,7 @@ def creatsuite():
     # testunit.addTest(test_homeCarousel.TestHomeCarousel("test_homepage_carousel"))
 
     '''登录页面登录'''
-    testunit.addTest(test_new_login.TestNewLogin("test_new_account_password_login_info_success"))
+    # testunit.addTest(test_new_login.TestNewLogin("test_new_account_password_login_info_success"))
     # testunit.addTest(test_new_login.TestNewLogin("test_new_account_password_login_info_fail"))
     # testunit.addTest(test_new_login.TestNewLogin("test_new_account_resiget_link"))
     # testunit.addTest(test_new_login.TestNewLogin("test_new_account_forget_password_link"))

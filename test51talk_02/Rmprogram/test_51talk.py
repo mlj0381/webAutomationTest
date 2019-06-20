@@ -1,4 +1,4 @@
-#!usr/bin/python
+#!usr/bin/python3
 #encoding:utf-8
 
 
@@ -18,7 +18,6 @@ import datetime
 curPath = os.path.abspath(os.path.dirname(__file__))
 # print (curPath)
 # print (os.path.dirname(curPath))
-
 #当前脚本的上一级目录路径
 rootPath = os.path.split(curPath)[0]
 # print (rootPath)
@@ -37,7 +36,6 @@ sys.path.append(rootPath)
 
 
 import all_51talk_1
-
 
 class TestTalk():
 

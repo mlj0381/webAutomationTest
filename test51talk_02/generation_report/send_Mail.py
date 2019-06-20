@@ -77,9 +77,9 @@ def send_mail(file_dir,new_file_name):
 
     except smtplib.SMTPException as e:
 
-        print "Error: cannot send my email"
-        print e
+        print ("Error: cannot send my email")
+        print (e)
 
     smtp.quit()
 
-    print 'email has send out !'
+    print ('email has send out !')

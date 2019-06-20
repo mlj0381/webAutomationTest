@@ -10,8 +10,7 @@ from selenium import webdriver
 from time import sleep
 from configuration_files import accountConfigInformation as accountConfig
 import os
-from user_file_rw_operation import *
-
+from talkUser.user_file_rw_operation import *
 
 #----------------------------------------------------------------------------------------------------------------------#
     #短信平台操作
@@ -57,7 +56,7 @@ def user_sms_platform_info(driver,user_account):
         #获取下方短信内容
         sms_text1 = driver.find_element_by_xpath("/html/body/div[3]/div[2]/div[2]/div/div/div[2]/table[1]/tbody/tr/td[3]").text
 
-        print sms_text1
+        print (sms_text1)
 
         a_len = len(sms_text1)
 

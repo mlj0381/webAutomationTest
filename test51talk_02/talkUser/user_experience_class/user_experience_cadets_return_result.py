@@ -416,11 +416,11 @@ def user_experience_cadets_return_result_success(driver,current_window_handle,us
 
                         print ("")
                         print ("***************************************")
-                        print Reservations_for_course_information_text
+                        print (Reservations_for_course_information_text)
                         print ("")
-                        print class_time_text
+                        print (class_time_text)
                         print (u"教材名称：" + teaching_material_text_1 + " " + teaching_material_text_2)
-                        print the_way_of_class_text
+                        print (the_way_of_class_text)
                         print ("***************************************")
                         print ("")
 

@@ -9,7 +9,7 @@ __author__ = 'zhangbo'
 
 
 import unittest
-import urllib2
+# import urllib2
 from time import *
 
 from selenium import webdriver
@@ -158,7 +158,7 @@ class TestNewLogin(unittest.TestCase):
 
                         if login_info_error_text_1 == u"请输入您的账号" and login_info_error_text_2 == u"请输入密码":
 
-                            print "#-------------------------------#"
+                            print ("#-------------------------------#")
 
                             print (u"该手机号输入为空，请重新输入！！！")
                             print (u"该密码输入为空，请重新输入！！！")

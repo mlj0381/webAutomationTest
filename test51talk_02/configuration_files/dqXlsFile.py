@@ -35,10 +35,10 @@ def dqXlsLoginFail():
 
     gendir = os.path.dirname(os.getcwd())
 
-    xlsxGenDir = gendir + "\\FileDir\userInfoLoginFail.xlsx"
+    # xlsxGenDir = gendir + "\\FileDir\userInfoLoginFail.xlsx"
 
     #mac
-    # xlsxGenDir = gendir + "/FileDir/userInfoLoginFail.xlsx"
+    xlsxGenDir = gendir + "/FileDir/userInfoLoginFail.xlsx"
 
     xlsxgendir = xlrd.open_workbook(xlsxGenDir)
     xlsx_table = xlsxgendir.sheets()[0]
@@ -60,10 +60,10 @@ def dqXlsResigetSuccess():
 
     gendir = os.path.dirname(os.getcwd())
 
-    xlsxGenDir = gendir + "\\FileDir\userInfoResigetSuccess.xlsx"
+    # xlsxGenDir = gendir + "\\FileDir\userInfoResigetSuccess.xlsx"
 
     #mac
-    # xlsxGenDir = gendir + "/FileDir/userInfoResigetSuccess.xlsx"
+    xlsxGenDir = gendir + "/FileDir/userInfoResigetSuccess.xlsx"
 
     xlsxgendir = xlrd.open_workbook(xlsxGenDir)
     xlsx_table = xlsxgendir.sheets()[0]
@@ -85,10 +85,10 @@ def dqXlsResigetFail():
 
     gendir = os.path.dirname(os.getcwd())
 
-    xlsxGenDir = gendir + "\\FileDir\userInfoResigetFail.xlsx"
+    # xlsxGenDir = gendir + "\\FileDir\userInfoResigetFail.xlsx"
 
     #mac
-    # xlsxGenDir = gendir + "/FileDir/userInfoResigetFail.xlsx"
+    xlsxGenDir = gendir + "/FileDir/userInfoResigetFail.xlsx"
 
     xlsxgendir = xlrd.open_workbook(xlsxGenDir)
     xlsx_table = xlsxgendir.sheets()[0]

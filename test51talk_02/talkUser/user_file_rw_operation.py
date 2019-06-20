@@ -30,7 +30,7 @@ def user_file_r_operation():
 
         file_name.close()
 
-        print jiequ_code
+        print (jiequ_code)
 
         return jiequ_code
 
