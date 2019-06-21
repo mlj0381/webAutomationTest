@@ -60,7 +60,7 @@ def creatsuite():
     testunit.addTest(test_startPage.TestStartPage("test_start_page"))
 
     '''主站模块TAB切换'''
-    # testunit.addTest(test_homePage.TestHomePage("test_homepage_tabpage_switch"))
+    testunit.addTest(test_homePage.TestHomePage("test_homepage_tabpage_switch"))
 
     '''成人主站TAB切换'''
     # testunit.addTest(test_adultHomePage.TestAdultHomePage("test_adulthomepage_tabpage_switch"))
