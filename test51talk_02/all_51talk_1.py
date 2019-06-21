@@ -57,15 +57,15 @@ def creatsuite():
     testunit = unittest.TestSuite()
 
     '''启动页弹出层切换'''
-    testunit.addTest(test_startPage.TestStartPage("test_start_page"))
+    # testunit.addTest(test_startPage.TestStartPage("test_start_page"))
 
     '''主站模块TAB切换'''
-    testunit.addTest(test_homePage.TestHomePage("test_homepage_tabpage_switch"))
+    # testunit.addTest(test_homePage.TestHomePage("test_homepage_tabpage_switch"))
 
     '''成人主站TAB切换'''
     # testunit.addTest(test_adultHomePage.TestAdultHomePage("test_adulthomepage_tabpage_switch"))
 
-    '''美小主站TAB切换'''
+    '''美小主站TAB切换--主站美小官网下线，入口没有找到'''
     # testunit.addTest(test_aaHomePage.TestAaHomePage("test_aahomepage_tabpage_switch"))
 
     '''主站顶部导航条'''
@@ -74,7 +74,7 @@ def creatsuite():
     '''成人顶部导航条'''
     # testunit.addTest(test_adult_NavigationBar.TestAdultNavigationBar("test_adult_navigation_bar"))
 
-    '''美小顶部导航条'''
+    '''美小顶部导航条--主站美小官网下线，入口没有找到'''
     # testunit.addTest(test_aa_NavigationBar.TestAaNavigationBar("test_aa_navigation_bar"))
 
     '''首页模块轮播图'''

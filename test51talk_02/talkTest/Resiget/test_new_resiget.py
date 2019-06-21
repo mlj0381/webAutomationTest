@@ -18,6 +18,7 @@ from selenium.webdriver.common.by import By
 from configuration_files.accountConfigInformation import *
 from configuration_files.dqTxtFile import readResigetSuccessFile, readResigetFailFile
 from configuration_files.dqXlsFile import dqXlsResigetFail
+from configuration_files import driver_configurationFiles as config_driver
 from db_files.userInformation_db_old_data_insert import userInformation_db_old_data_insert_success
 from db_files.userInformation_db_query import userInformation_db_query_mobile_password_success
 from db_files.userInformation_db_query import userInformation_db_query_user_id_success
@@ -44,11 +45,11 @@ class TestNewResiget(unittest.TestCase):
 
         def setUp(self):
 
-            self.driver = webdriver.Chrome()
-
             # self.driver = config_driver.obj_phantomjs_mac_driver
 
             # self.driver = config_driver.obj_phantomjs_window_driver
+
+            self.driver = config_driver.obj_driver
 
             self.url    = "http://www.51talk.com"
 

@@ -21,6 +21,7 @@ from talkUser.user_account.test_account_class_leave import test_account_class_le
 from talkUser.user_account.test_account_cash_coupon import test_account_cash_coupon_success
 from talkUser.user_account.test_account_purchase_record import test_account_purchase_record_success
 from talkUser.user_account.test_account_wealth_record import test_account_wealth_record_success
+from configuration_files import driver_configurationFiles as config_driver
 
 
 #账号设置
@@ -32,11 +33,11 @@ class TestAccountSettings(unittest.TestCase):
 
         def setUp(self):
 
-            self.driver = webdriver.Chrome()
-
             # self.driver = config_driver.obj_phantomjs_mac_driver
 
             # self.driver = config_driver.obj_phantomjs_window_driver
+
+            self.driver = config_driver.obj_driver
 
             self.url    = "http://www.51talk.com"
 

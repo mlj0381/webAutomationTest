@@ -16,6 +16,7 @@ from selenium import webdriver
 from  selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 
+from configuration_files import driver_configurationFiles as config_driver
 from configuration_files.db_config import *
 from configuration_files.dqTxtFile import readLoginSuccessFile, readLoginFailFile
 from db_files.userInformation_db_old_data_insert import userInformation_db_old_data_insert_success
@@ -46,7 +47,7 @@ class TestNewLogin(unittest.TestCase):
 
         def setUp(self):
 
-            self.driver = webdriver.Chrome()
+            self.driver = config_driver.obj_driver
 
             # self.driver = config_driver.obj_phantomjs_mac_driver
 

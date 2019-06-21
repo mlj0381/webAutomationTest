@@ -14,7 +14,7 @@ import unittest
 
 from talkTest.StartPage.startPagePopLayer import *
 
-from configuration_files import configurationFiles as config_driver
+from configuration_files import driver_configurationFiles as config_driver
 
 from talkUser.user_quit_browser import *
 
@@ -26,11 +26,7 @@ class TestAdultHomePage(unittest.TestCase):
 
     def setUp(self):
 
-        self.driver = webdriver.Chrome()
-
-        # self.driver = config_driver.obj_phantomjs_mac_driver
-
-        # self.driver = config_driver.obj_phantomjs_window_driver
+        self.driver = config_driver.obj_driver
 
         self.url = "http://www.51talk.com"
 
