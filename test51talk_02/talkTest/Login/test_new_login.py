@@ -111,8 +111,12 @@ class TestNewLogin(unittest.TestCase):
                 #读入文件--txt
                 read_login_success_txt = readLoginSuccessFile()
 
-                for i in read_login_success_txt:
+                print (read_login_success_txt)
 
+                for i in read_login_success_txt:
+                    print (type(i))
+                    i = i.decode("utf-8")
+                    print (type(i))
                     user_mobile = i.split(',')[0]
                     user_password = i.split(',')[1]
 
@@ -376,7 +380,7 @@ class TestNewLogin(unittest.TestCase):
                                 sleep(2)
 
                                 # 查询付费用户财富信息
-                                wealth_data = user_paid_the_wealth_success(driver,str(user_id),str(user_mobile))
+                                # wealth_data = user_paid_the_wealth_success(driver,str(user_id),str(user_mobile))
 
                                 # 预约公开课
                                 # user_open_class_success(driver,current_window_handle,login_after_link,wealth_data,str(user_id),str(user_mobile))

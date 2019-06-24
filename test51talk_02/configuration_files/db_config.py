@@ -43,12 +43,24 @@ from pymysql import connect,cursors
 # cursor_test = conn_test.cursor()
 
 # 连接线上测试数据库
-conn_onlie_test = connect(host='127.0.0.1',
-                          user='root',
-                          # password='123456',
-                          password='1234qwer',
+# conn_onlie_test = connect(host='127.0.0.1',
+#                           user='root',
+#                           # password='123456',
+#                           password='1234qwer',
+#                           port=3306,
+#                           db='onlie_test',
+#                           charset='utf8',
+#                           cursorclass=cursors.DictCursor)
+
+# 连接线上测试数据库游标
+# cursor_onlie_test = conn_onlie_test.cursor()
+
+# 连接172.16.70.20测试数据库
+conn_onlie_test = connect(host='172.16.70.20',
+                          user='rd_user',
+                          password='NTHXDF7czYwi',
                           port=3306,
-                          db='onlie_test',
+                          db='cs_zhangbo_onlie_test',
                           charset='utf8',
                           cursorclass=cursors.DictCursor)
 

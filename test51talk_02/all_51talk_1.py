@@ -81,7 +81,7 @@ def creatsuite():
     # testunit.addTest(test_homeCarousel.TestHomeCarousel("test_homepage_carousel"))
 
     '''登录页面登录'''
-    # testunit.addTest(test_new_login.TestNewLogin("test_new_account_password_login_info_success"))
+    testunit.addTest(test_new_login.TestNewLogin("test_new_account_password_login_info_success"))
     # testunit.addTest(test_new_login.TestNewLogin("test_new_account_password_login_info_fail"))
     # testunit.addTest(test_new_login.TestNewLogin("test_new_account_resiget_link"))
     # testunit.addTest(test_new_login.TestNewLogin("test_new_account_forget_password_link"))
