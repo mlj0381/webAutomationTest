@@ -49,10 +49,6 @@ class TestNewLogin(unittest.TestCase):
 
             self.driver = config_driver.obj_driver
 
-            # self.driver = config_driver.obj_phantomjs_mac_driver
-
-            # self.driver = config_driver.obj_phantomjs_window_driver
-
             self.url    = "http://www.51talk.com"
 
             sleep(2)

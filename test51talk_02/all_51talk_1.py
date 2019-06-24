@@ -75,7 +75,7 @@ def creatsuite():
     # testunit.addTest(test_adult_NavigationBar.TestAdultNavigationBar("test_adult_navigation_bar"))
 
     '''美小顶部导航条--主站美小官网下线，入口没有找到'''
-    # testunit.addTest(test_aa_NavigationBar.TestAaNavigationBar("test_aa_navigation_bar"))
+    testunit.addTest(test_aa_NavigationBar.TestAaNavigationBar("test_aa_navigation_bar"))
 
     '''首页模块轮播图'''
     # testunit.addTest(test_homeCarousel.TestHomeCarousel("test_homepage_carousel"))
