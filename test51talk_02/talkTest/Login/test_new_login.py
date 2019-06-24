@@ -19,6 +19,7 @@ from selenium.webdriver.common.by import By
 from configuration_files import driver_configurationFiles as config_driver
 from configuration_files.db_config import *
 from configuration_files.dqTxtFile import readLoginSuccessFile, readLoginFailFile
+from configuration_files.dqXlsFile import dqXlsLoginSuccess
 from db_files.userInformation_db_old_data_insert import userInformation_db_old_data_insert_success
 from db_files.userInformation_db_query import userInformation_db_query_mobile_password_success
 from db_files.userInformation_db_query import userInformation_db_query_user_id_success
@@ -99,10 +100,10 @@ class TestNewLogin(unittest.TestCase):
                 #
                 # for i in range(1, len(read_login_success_xlsx)):
                 #
-                #     user_account = int(read_login_success_xlsx[i][0])
+                #     user_mobile = int(read_login_success_xlsx[i][0])
                 #     user_password = int(read_login_success_xlsx[i][1])
-                #     user_english_name = read_login_success_xlsx[i][2]
-                #     user_tuijian_mobile = int(read_login_success_xlsx[i][3])
+                    # user_english_name = read_login_success_xlsx[i][2]
+                    # user_tuijian_mobile = int(read_login_success_xlsx[i][3])
 
                 #读入文件--txt
                 read_login_success_txt = readLoginSuccessFile()
@@ -361,7 +362,7 @@ class TestNewLogin(unittest.TestCase):
 
                                 #----------------------------------------------------#
 
-                                print (user_mobile + "该账号为成人/青少付费学员类型，直接进入会员中心啦～")
+                                print (str(user_mobile) + "该账号为成人/青少付费学员类型，直接进入会员中心啦～")
 
                                 #----------------------------------------------------#
 

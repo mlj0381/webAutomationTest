@@ -10,7 +10,7 @@ def dqXlsLoginSuccess():
 
     gendir = os.path.dirname(os.getcwd())
 
-    # xlsxGenDir = gendir + "\\FileDir\userInfoLoginSuccess.xlsx"
+    # xlsxGenDir = gendir + "\\FileDir\\userInfoLoginSuccess.xlsx"
 
     #mac
     xlsxGenDir = gendir + "/FileDir/userInfoLoginSuccess.xlsx"
