@@ -16,7 +16,7 @@ from selenium import webdriver
 from  selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 
-from configuration_files import driver_configurationFiles as config_driver
+from configuration_files.driver_configurationFiles import browser_driver
 from configuration_files.db_config import *
 from configuration_files.dqTxtFile import readLoginSuccessFile, readLoginFailFile
 from configuration_files.dqXlsFile import dqXlsLoginSuccess
@@ -48,7 +48,7 @@ class TestNewLogin(unittest.TestCase):
 
         def setUp(self):
 
-            self.driver = config_driver.obj_driver
+            self.driver = browser_driver()
 
             self.url    = "http://www.51talk.com"
 
@@ -97,38 +97,35 @@ class TestNewLogin(unittest.TestCase):
 
                 #读入文件--xlsx
                 # read_login_success_xlsx = dqXlsLoginSuccess()
-                #
+
                 # for i in range(1, len(read_login_success_xlsx)):
-                #
-                #     user_mobile = int(read_login_success_xlsx[i][0])
-                #     user_password = int(read_login_success_xlsx[i][1])
+
+                    # user_mobile = int(read_login_success_xlsx[i][0])
+                    # user_password = int(read_login_success_xlsx[i][1])
                     # user_english_name = read_login_success_xlsx[i][2]
                     # user_tuijian_mobile = int(read_login_success_xlsx[i][3])
 
                 #读入文件--txt
                 read_login_success_txt = readLoginSuccessFile()
 
-                print (read_login_success_txt)
-
                 for i in read_login_success_txt:
-                    print (type(i))
+
                     i = i.decode("utf-8")
-                    print (type(i))
                     user_mobile = i.split(',')[0]
                     user_password = i.split(',')[1]
 
                 # user_mobile = raw_input("请输入用户登录手机号：")
 
-                sleep(1)
+                sleep(0.5)
 
                 # user_password = raw_input("请输入用户登录密码：")
 
-                sleep(1)
+                sleep(0.5)
 
                 #输入账号
                 driver.find_element_by_xpath("//*[@id='accountId']").send_keys(user_mobile)
 
-                sleep(2)
+                sleep(0.5)
 
                 #输入密码
                 driver.find_element_by_xpath("//*[@id='password']").send_keys(user_password)
@@ -290,7 +287,7 @@ class TestNewLogin(unittest.TestCase):
 
                             # -----------------------------------#
 
-                            print ("用户信息写入正确，请查看！！！")
+                            print ("该用户注册信息写入成功，请查看！！！")
 
                             # -----------------------------------#
 
@@ -362,7 +359,7 @@ class TestNewLogin(unittest.TestCase):
 
                                 #----------------------------------------------------#
 
-                                print (str(user_mobile) + "该账号为成人/青少付费学员类型，直接进入会员中心啦～")
+                                print (str(user_mobile) + "该账号为成人/青少付费学员类型")
 
                                 #----------------------------------------------------#
 
@@ -391,7 +388,7 @@ class TestNewLogin(unittest.TestCase):
 
                                 #---------------------------------------------------------------------------------#
 
-                                print (user_mobile + "该账号为成人/青少体验学员类型：财富已过期或已预约体验课，直接进入体验账号会员中心啦~")
+                                print (str(user_mobile) + "该账号为成人/青少体验学员类型：财富已过期或已预约体验课，直接进入会员中心查看记录")
 
                                 #---------------------------------------------------------------------------------#
 
@@ -421,7 +418,7 @@ class TestNewLogin(unittest.TestCase):
 
                                 #---------------------------------------------------------------#
 
-                                print (user_mobile + "该账号为成人/青少体验学员类型，还没有约课，请先进行体验课约课啦~")
+                                print (str(user_mobile) + "该账号为成人/青少体验学员类型，还没有约课，请先进行体验课约课")
 
                                 #---------------------------------------------------------------#
 
@@ -443,7 +440,7 @@ class TestNewLogin(unittest.TestCase):
 
                                     # -----------------------------------#
 
-                                    print ("用户信息写入成功，请查看！！！")
+                                    print ("该用户信息财富写入成功，请查看！！！")
 
                                     # -----------------------------------#
 
@@ -505,7 +502,7 @@ class TestNewLogin(unittest.TestCase):
 
                                     #------------------------------------#
 
-                                    print (user_mobile + "该手机号已验证，请选择体验课吧～")
+                                    print (str(user_mobile) + "该手机号已验证，请选择体验课吧～")
 
                                     #------------------------------------#
 
@@ -529,7 +526,7 @@ class TestNewLogin(unittest.TestCase):
 
                                 #------------------------------------------------------#
 
-                                print (user_mobile + "该账号为美小付费学员类型，直接进入体验账号会员中心啦~")
+                                print (user_mobile + "该账号为美小付费学员类型")
 
                                 #------------------------------------------------------#
 
@@ -780,6 +777,7 @@ class TestNewLogin(unittest.TestCase):
 
             for line in read_login_fail_txt:
 
+                line = line.decode("utf-8")
                 user_account     = line.split(',')[0]
                 user_password   = line.split(',')[1]
 
@@ -899,7 +897,7 @@ class TestNewLogin(unittest.TestCase):
 
                             #---------------------------------------#
 
-                            print ("需要刷新页面，更新当前页面状态啦～")
+                            # print ("需要刷新页面，更新当前页面状态啦～")
 
                             #---------------------------------------#
 
@@ -968,14 +966,15 @@ class TestNewLogin(unittest.TestCase):
 
                 for i in read_login_success_txt:
 
+                    i = i.decode("utf-8")
                     user_mobile = i.split(',')[0]
                     user_password = i.split(',')[1]
 
-                user_mobile = raw_input("请输入用户登录手机号：")
+                # user_mobile = raw_input("请输入用户登录手机号：")
 
                 sleep(0.5)
 
-                user_password = raw_input("请输入用户登录密码：")
+                # user_password = raw_input("请输入用户登录密码：")
 
                 #输入手机号
                 driver.find_element_by_xpath("//*[@id='mobile']").send_keys(user_mobile)
@@ -1225,7 +1224,7 @@ class TestNewLogin(unittest.TestCase):
 
                                                     # -----------------------------------#
 
-                                                    print ("用户信息写入正确，请查看！！！")
+                                                    print ("该用户注册信息写入成功，请查看！！！")
 
                                                     # -----------------------------------#
 
@@ -1298,7 +1297,7 @@ class TestNewLogin(unittest.TestCase):
 
                                                         #----------------------------------------------------#
 
-                                                        print ("该账号为成人/青少付费学员类型，直接进入会员中心啦～")
+                                                        print (str(user_mobile) + "该账号为成人/青少付费学员类型")
 
                                                         #----------------------------------------------------#
 
@@ -1327,7 +1326,7 @@ class TestNewLogin(unittest.TestCase):
 
                                                         #---------------------------------------------------------------------------------#
 
-                                                        print ("该账号为成人/青少体验学员类型：财富已过期或已预约体验课，直接进入体验账号会员中心啦~")
+                                                        print (str(user_mobile) + "该账号为成人/青少体验学员类型：财富已过期或已预约体验课，直接进入会员中心查看记录")
 
                                                         #---------------------------------------------------------------------------------#
 
@@ -1340,7 +1339,7 @@ class TestNewLogin(unittest.TestCase):
                                                             pass
 
                                                         # 调用约体验课
-                                                        user_experience_cadets_success(driver, current_window_handle,str(user_id), str(user_mobile))
+                                                        # user_experience_cadets_success(driver, current_window_handle,str(user_id), str(user_mobile))
 
                                                         # 查询体验用户财富信息
                                                         # wealth_data = user_experience_the_wealth_success(driver,login_after_link,str(user_id),str(user_mobile))
@@ -1357,7 +1356,7 @@ class TestNewLogin(unittest.TestCase):
 
                                                         #---------------------------------------------------------------#
 
-                                                        print (user_mobile + "该账号为成人/青少体验学员类型，还没有约课，请先进行体验课约课啦~")
+                                                        print (str(user_mobile) + "该账号为成人/青少体验学员类型，还没有约课，请先进行体验课约课")
 
                                                         #---------------------------------------------------------------#
 
@@ -1384,7 +1383,7 @@ class TestNewLogin(unittest.TestCase):
 
                                                             # -----------------------------------#
 
-                                                            print ("用户信息写入成功，请查看！！！")
+                                                            print ("该用户信息财富写入成功，请查看！！！")
 
                                                             # -----------------------------------#
 
@@ -1451,7 +1450,7 @@ class TestNewLogin(unittest.TestCase):
                                                             sleep(2)
 
                                                         # 调用约体验课
-                                                        user_experience_cadets_success(driver, current_window_handle,str(user_id), str(user_mobile))
+                                                        # user_experience_cadets_success(driver, current_window_handle,str(user_id), str(user_mobile))
 
                                                         # 查询体验用户财富信息
                                                         # wealth_data = user_experience_the_wealth_success(driver,login_after_link,str(user_id),str(user_mobile))
@@ -1468,7 +1467,7 @@ class TestNewLogin(unittest.TestCase):
 
                                                         #------------------------------------------------------#
 
-                                                        print ("该账号为美小付费学员类型，直接进入体验账号会员中心啦~")
+                                                        print (user_mobile + "该账号为美小付费学员类型")
 
                                                         #------------------------------------------------------#
 
@@ -1730,6 +1729,7 @@ class TestNewLogin(unittest.TestCase):
 
             for line in read_login_fail_txt:
 
+                line = line.decode("utf-8")
                 user_mobile     = line.split(',')[0]
                 user_code       = line.split(',')[2]
 
@@ -1911,16 +1911,16 @@ class TestNewLogin(unittest.TestCase):
             #注册链接
             driver.find_element_by_xpath("//*[@id='container']/div/div[1]/form/div[3]/div[2]/a[1]").click()
 
-            sleep(2)
+            sleep(1)
 
             resiget_url = driver.current_url
 
             if resiget_url == "http://login.51talk.com/register/mobile?client=1" or \
                resiget_url == "https://login.51talk.com/register/mobile?client=1":
 
-                print (u"注册链接正确～")
+                print ("获取注册链接正确-->",resiget_url)
 
-            print ("***********************************************")
+            print ("***********************************************" + "\n")
 
 #----------------------------------------------------------------------------------------------------------------------#
     #主站账号密码登录页面--忘记密码
@@ -1961,7 +1961,7 @@ class TestNewLogin(unittest.TestCase):
             if forget_password_url == "http://login.51talk.com/password/forgot?client=1" or \
                forget_password_url == "https://login.51talk.com/password/forgot?client=1":
 
-                print (u"忘记密码链接正确～")
+                print ("获取忘记密码链接正确-->",forget_password_url)
 
             print ("***********************************************" + "\n")
 
@@ -2004,7 +2004,7 @@ class TestNewLogin(unittest.TestCase):
             if liji_resiget_url == "http://login.51talk.com/register/mobile?client=1" or \
                liji_resiget_url == "https://login.51talk.com/register/mobile?client=1":
 
-                print (u"立即注册链接正确～")
+                print ("获取立即注册链接正确-->",liji_resiget_url)
 
             print ("***********************************************" + "\n")
 
@@ -2050,7 +2050,7 @@ class TestNewLogin(unittest.TestCase):
             if resiget_url == "http://login.51talk.com/register/mobile?client=1" or \
                resiget_url == "https://login.51talk.com/register/mobile?client=1":
 
-                print (u"注册链接正确～")
+                print ("获取注册链接正确-->",resiget_url)
 
             print ("***********************************************" + "\n")
 
@@ -2096,7 +2096,7 @@ class TestNewLogin(unittest.TestCase):
             if forget_password_url == "http://login.51talk.com/password/forgot?client=1" or \
                forget_password_url == "https://login.51talk.com/password/forgot?client=1":
 
-                print (u"忘记密码链接正确～")
+                print ("获取忘记密码链接正确-->",forget_password_url)
 
             print ("***********************************************" + "\n")
 
@@ -2142,7 +2142,7 @@ class TestNewLogin(unittest.TestCase):
             if liji_resiget_url == "http://login.51talk.com/register/mobile?client=1" or \
                liji_resiget_url == "https://login.51talk.com/register/mobile?client=1":
 
-                print (u"立即注册链接正确～")
+                print ("获取立即注册链接正确-->",liji_resiget_url)
 
             print ("***********************************************" + "\n")
 

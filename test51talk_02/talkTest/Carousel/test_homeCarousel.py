@@ -15,7 +15,7 @@ from time import sleep
 
 from talkTest.StartPage.startPagePopLayer import startPageComeInto
 
-from configuration_files import driver_configurationFiles as config_driver
+from configuration_files.driver_configurationFiles import browser_driver
 
 from talkUser.user_quit_browser import *
 
@@ -24,7 +24,7 @@ class TestHomeCarousel(unittest.TestCase):
 
     def setUp(self):
 
-        self.driver = config_driver.obj_driver
+        self.driver = browser_driver()
 
         self.url = "http://www.51talk.com"
 

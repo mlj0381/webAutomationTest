@@ -14,7 +14,7 @@ import unittest
 
 from talkTest.StartPage.startPagePopLayer import *
 
-from configuration_files import driver_configurationFiles as config_driver
+from configuration_files.driver_configurationFiles import browser_driver
 
 from talkUser.user_quit_browser import *
 
@@ -26,7 +26,7 @@ class TestAdultHomePage(unittest.TestCase):
 
     def setUp(self):
 
-        self.driver = config_driver.obj_driver
+        self.driver = browser_driver()
 
         self.url = "http://www.51talk.com"
 
@@ -41,10 +41,10 @@ class TestAdultHomePage(unittest.TestCase):
         print ("**************************************************成人主站TAB切换**************************************************"+'\n')
 
         driver = self.driver
+        driver.maximize_window()
         driver.get(self.url)
         sleep(1)
 
-        driver.maximize_window()
 
         currey_handles = driver.current_window_handle
 

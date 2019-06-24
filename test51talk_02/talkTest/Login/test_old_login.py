@@ -17,6 +17,7 @@ from selenium.webdriver.common.by import By
 from configuration_files.db_config import *
 from configuration_files.dqXlsFile import dqXlsLoginSuccess
 from configuration_files.dqTxtFile import readLoginSuccessFile
+from configuration_files.driver_configurationFiles import browser_driver
 from db_files.userInformation_db_old_data_insert import userInformation_db_old_data_insert_success
 from db_files.userInformation_db_query import userInformation_db_query_mobile_password_success
 from db_files.userInformation_db_query import userInformation_db_query_user_id_success
@@ -44,11 +45,7 @@ class TestOldLogin(unittest.TestCase):
 
     def setUp(self):
 
-        self.driver = webdriver.Chrome()
-
-        # self.driver = config_driver.obj_phantomjs_mac_driver
-
-        # self.driver = config_driver.obj_phantomjs_window_driver
+        self.driver = browser_driver()
 
         sleep(2)
 
@@ -183,7 +180,7 @@ class TestOldLogin(unittest.TestCase):
 
                 #-----------------------------------#
 
-                print ("用户信息写入正确，请查看！！！")
+                print ("该用户注册信息写入成功，请查看！！！")
 
                 #-----------------------------------#
 
@@ -243,7 +240,7 @@ class TestOldLogin(unittest.TestCase):
 
                     #----------------------------------------------------#
 
-                    print (user_mobile + "该账号为成人/青少付费学员类型，直接进入会员中心啦～")
+                    print (str(user_mobile) + "该账号为成人/青少付费学员类型")
 
                     #----------------------------------------------------#
 
@@ -273,7 +270,7 @@ class TestOldLogin(unittest.TestCase):
 
                     #---------------------------------------------------------------------------------#
 
-                    print ("该账号为成人/青少体验学员类型：财富已过期或已预约体验课，直接进入体验账号会员中心啦~")
+                    print (str(user_mobile) + "该账号为成人/青少体验学员类型：财富已过期或已预约体验课，直接进入体验账号会员中心啦~")
 
                     #---------------------------------------------------------------------------------#
 
@@ -306,7 +303,7 @@ class TestOldLogin(unittest.TestCase):
 
                     #---------------------------------------------------------------#
 
-                    print (str(user_mobile) + "该账号为成人/青少体验学员类型，还没有约课，请先进行体验课约课啦~")
+                    print (str(user_mobile) + "该账号为成人/青少体验学员类型，还没有约课，请先进行体验课约课")
 
                     #---------------------------------------------------------------#
 
@@ -328,7 +325,7 @@ class TestOldLogin(unittest.TestCase):
 
                         # -----------------------------------#
 
-                        print ("用户信息写入成功，请查看！！！")
+                        print ("该用户信息财富写入成功，请查看！！！")
 
                         # -----------------------------------#
 
@@ -417,7 +414,7 @@ class TestOldLogin(unittest.TestCase):
 
                     #------------------------------------------------------#
 
-                    print ("该账号为美小付费学员类型，直接进入体验账号会员中心啦~")
+                    print (str(user_mobile) + "该账号为美小付费学员类型")
 
                     #------------------------------------------------------#
 

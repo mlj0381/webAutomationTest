@@ -14,7 +14,7 @@ import unittest
 
 from talkTest.StartPage.startPagePopLayer import startPageComeInto
 
-from configuration_files import driver_configurationFiles as config_driver
+from configuration_files.driver_configurationFiles import browser_driver
 
 from talkUser.user_quit_browser import *
 
@@ -25,7 +25,7 @@ class TestHomePage(unittest.TestCase):
 
     def setUp(self):
 
-        self.driver = config_driver.obj_driver
+        self.driver = browser_driver()
 
         self.url = "http://www.51talk.com"
 
@@ -40,10 +40,10 @@ class TestHomePage(unittest.TestCase):
         print ("**************************************************主站模块TAB切换**************************************************")
 
         driver = self.driver
+        driver.maximize_window()
         driver.get(self.url)
         sleep(1)
 
-        driver.maximize_window()
 
         #调用启动页进入青少儿官网
         startPageComeInto(driver)
