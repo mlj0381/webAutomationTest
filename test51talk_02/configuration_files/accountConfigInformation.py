@@ -4,9 +4,9 @@
 __author__ = 'zhangbo'
 
 
-userName = 'zhangbo2019'
+userName = 'zhangbo'
 
-userPass = 'zhangbo'
+userPass = 'zhangbo2019'
 
 houTaiAccout = 'wangwenjuan'
 

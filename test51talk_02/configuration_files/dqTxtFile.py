@@ -80,7 +80,6 @@ def readResigetSuccessFile():
     cs_file = "cs_resiget_success.txt"
 
     cs_file_dir =  cs_dir + "/" + "FileDir" + "/" + cs_file
-    # print cs_file_dir
 
     aa = open(cs_file_dir,"rb")
 

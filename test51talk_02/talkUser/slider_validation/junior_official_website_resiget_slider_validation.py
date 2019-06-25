@@ -51,7 +51,3 @@ def junior_official_website_resiget_slider_validation_mobile(driver):
     # urllib2.urlopen("http://login.51talk.com/ajax/event/slide?action=success&gt=3")
 
     sleep(1)
-
-    print ("123+")
-
-    sleep(1)

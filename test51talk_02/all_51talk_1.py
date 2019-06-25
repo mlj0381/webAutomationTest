@@ -57,13 +57,13 @@ def creatsuite():
     testunit = unittest.TestSuite()
 
     '''启动页弹出层切换'''
-    # testunit.addTest(test_startPage.TestStartPage("test_start_page"))
+    testunit.addTest(test_startPage.TestStartPage("test_start_page"))
 
     '''主站模块TAB切换'''
-    # testunit.addTest(test_homePage.TestHomePage("test_homepage_tabpage_switch"))
+    testunit.addTest(test_homePage.TestHomePage("test_homepage_tabpage_switch"))
 
     '''成人主站TAB切换'''
-    # testunit.addTest(test_adultHomePage.TestAdultHomePage("test_adulthomepage_tabpage_switch"))
+    testunit.addTest(test_adultHomePage.TestAdultHomePage("test_adulthomepage_tabpage_switch"))
 
     '''美小主站TAB切换--主站美小官网下线，入口没有找到'''
     # testunit.addTest(test_aaHomePage.TestAaHomePage("test_aahomepage_tabpage_switch"))
@@ -92,6 +92,7 @@ def creatsuite():
     #手机号验证码登录，验证码老是提示登录不了
     # testunit.addTest(test_new_login.TestNewLogin("test_new_mobile_login_info_success"))
     #------------------------------------------------------------------------------------#
+
     # testunit.addTest(test_new_login.TestNewLogin("test_new_mobile_login_info_fail"))
     # testunit.addTest(test_new_login.TestNewLogin("test_new_mobile_resiget_link"))
     # testunit.addTest(test_new_login.TestNewLogin("test_new_mobile_forget_password_link"))
@@ -103,15 +104,16 @@ def creatsuite():
 
 
     '''青少官网首页面板注册'''
+    #------------------------------------------------------------------------------------#
+    #获取后的验证码，老是提示不正确，无法注册成功
     # testunit.addTest(test_new_resiget.TestNewResiget("test_new_Resiget_info_success"))
+    #------------------------------------------------------------------------------------#
+
     # testunit.addTest(test_new_resiget.TestNewResiget("test_new_Resiget_info_fail"))
 
 
     '''注册页面注册'''
-    #------------------------------------------------------------------------------------#
-    #手机号注册，验证码老是提示错误
     # testunit.addTest(test_new_resiget.TestNewResiget("test_new_Resiget_Page_info_success"))
-    #------------------------------------------------------------------------------------#
     # testunit.addTest(test_new_resiget.TestNewResiget("test_new_Resiget_Page_info_fail"))
     # testunit.addTest(test_new_resiget.TestNewResiget("test_new_Resiget_Page_user_protocol"))
     # testunit.addTest(test_new_resiget.TestNewResiget("test_new_Resiget_Page_privacy_statement"))

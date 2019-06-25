@@ -13,6 +13,8 @@ from selenium.webdriver.common.by import By
 
 from configuration_files.accountConfigInformation import *
 from configuration_files.dqTxtFile import readResigetSuccessFile
+from configuration_files.driver_configurationFiles import browser_driver
+
 from db_files.userInformation_db_query import userInformation_db_query_user_id_success
 from db_files.userInformation_db_query import userInformation_db_query_wealth_point_success
 from db_files.userInformation_db_resiget_insert import *
@@ -37,11 +39,7 @@ class TestOldResiget(unittest.TestCase):
 
     def setUp(self):
 
-        self.driver = webdriver.Chrome()
-
-        # self.driver = config_driver.obj_phantomjs_mac_driver
-
-        # self.driver = config_driver.obj_phantomjs_window_driver
+        self.driver = browser_driver()
 
         sleep(2)
 
@@ -93,6 +91,7 @@ class TestOldResiget(unittest.TestCase):
 
             for i in read_login_success_txt:
 
+                i = i.decode("utf-8")
                 user_mobile = i.split(',')[0]
                 user_password = i.split(',')[1]
                 user_englishName = i.split(',')[2]
@@ -181,7 +180,7 @@ class TestOldResiget(unittest.TestCase):
 
                 #-----------------------------------#
 
-                print ("用户信息写入正确，请查看！！！")
+                print ("该用户注册信息写入成功，请查看！！！")
 
                 #-----------------------------------#
 
@@ -243,7 +242,7 @@ class TestOldResiget(unittest.TestCase):
 
                         #---------------------------------------------------------------------------------#
 
-                        print ("该账号为成人/青少体验学员类型：财富已过期或已预约体验课，直接进入体验账号会员中心啦~")
+                        print (str(user_mobile) + "该账号为成人/青少体验学员类型：财富已过期或已预约体验课，直接进入会员中心查看记录")
 
                         #---------------------------------------------------------------------------------#
 
@@ -258,7 +257,7 @@ class TestOldResiget(unittest.TestCase):
                         sleep(2)
 
                         # 调用约体验课
-                        user_experience_cadets_success(driver, current_window_handle, str(user_id), str(user_mobile))
+                        # user_experience_cadets_success(driver, current_window_handle, str(user_id), str(user_mobile))
 
                         #查询体验用户财富信息
                         # wealth_data = user_experience_the_wealth_success(driver,resiget_after_link,str(user_id),str(user_mobile))
@@ -275,7 +274,7 @@ class TestOldResiget(unittest.TestCase):
 
                         #---------------------------------------------------------------#
 
-                        print (user_mobile + "该账号为成人/青少体验学员类型，还没有约课，请先进行体验课约课啦~")
+                        print (str(user_mobile) + "该账号为成人/青少体验学员类型，还没有约课，请先进行体验课约课")
 
                         #---------------------------------------------------------------#
 
@@ -298,7 +297,7 @@ class TestOldResiget(unittest.TestCase):
 
                             # -----------------------------------#
 
-                            print ("用户信息写入成功，请查看！！！")
+                            print ("该用户信息财富写入成功，请查看！！！")
 
                             # -----------------------------------#
 
@@ -382,7 +381,7 @@ class TestOldResiget(unittest.TestCase):
 
                         #------------------------------------------------------#
 
-                        print ("该账号为美小付费学员类型，直接进入体验账号会员中心啦~")
+                        print (str(user_mobile) + "该账号为美小付费学员类型")
 
                         #------------------------------------------------------#
 

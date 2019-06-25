@@ -60,14 +60,16 @@ def user_sms_platform_info(driver,user_account):
 
         a_len = len(sms_text1)
 
-        if a_len == 46:
+        if a_len == 58:
 
            jiequ_code = sms_text1[0:6]
+           print ("验证码为：",jiequ_code)
            return jiequ_code
 
-        if a_len == 54:
+        if a_len == 66:
 
            jiequ_code = sms_text1[8:14]
+           print ("验证码为：",jiequ_code)
            return jiequ_code
 
         sleep(1)

@@ -18,7 +18,8 @@ from selenium.webdriver.common.by import By
 from configuration_files.accountConfigInformation import *
 from configuration_files.dqTxtFile import readResigetSuccessFile, readResigetFailFile
 from configuration_files.dqXlsFile import dqXlsResigetFail
-from configuration_files import driver_configurationFiles as config_driver
+from configuration_files.driver_configurationFiles import browser_driver
+
 from db_files.userInformation_db_old_data_insert import userInformation_db_old_data_insert_success
 from db_files.userInformation_db_query import userInformation_db_query_mobile_password_success
 from db_files.userInformation_db_query import userInformation_db_query_user_id_success
@@ -45,11 +46,7 @@ class TestNewResiget(unittest.TestCase):
 
         def setUp(self):
 
-            # self.driver = config_driver.obj_phantomjs_mac_driver
-
-            # self.driver = config_driver.obj_phantomjs_window_driver
-
-            self.driver = config_driver.obj_driver
+            self.driver = browser_driver()
 
             self.url    = "http://www.51talk.com"
 
@@ -97,10 +94,9 @@ class TestNewResiget(unittest.TestCase):
             # 读入文件--txt
             read_resiget_success_txt = readResigetSuccessFile()
 
-
-
             for i in read_resiget_success_txt:
 
+                i = i.decode("utf-8")
                 user_mobile = i.split(',')[0]
                 user_password = i.split(',')[1]
 
@@ -227,7 +223,7 @@ class TestNewResiget(unittest.TestCase):
 
                             #-----------------------------------#
 
-                            print ("用户信息写入正确，请查看！！！")
+                            print ("该用户注册信息写入成功，请查看！！！")
 
                             #-----------------------------------#
 
@@ -384,32 +380,30 @@ class TestNewResiget(unittest.TestCase):
 
                                     driver.switch_to_window(current_handle)
 
-                                    sleep(2)
+                                    sleep(1)
 
                                     # 调取手机短信平台
                                     code_mobile = user_sms_platform_info(driver,user_mobile)
 
-                                    sleep(2)
+                                    sleep(1)
 
                             driver.close()
 
                             driver.switch_to_window(current_window_handle)
-                            sleep(2)
+                            sleep(1)
 
                             #输入验证码
                             driver.find_element_by_xpath("//*[@id='j_mobileCode']").send_keys(code_mobile)
-                            sleep(2)
-
-                            print(code_mobile)
+                            sleep(1)
 
                             #立即领取
                             driver.find_element_by_xpath("/html/body/div[2]/div/div/div[2]/div/form/input[2]").click()
-                            sleep(2)
+                            sleep(1)
 
                             # 判断输入验证码超时，注册失败
                             try:
 
-                                print ("验证码超时")
+                                # print ("验证码超时")
                                 # 判断输入验证码超时，注册失败
                                 driver.find_element_by_xpath("//*[@id='sureId']").click()
                                 sleep(1)
@@ -422,7 +416,7 @@ class TestNewResiget(unittest.TestCase):
 
                             except:
 
-                                print ("注册成功")
+                                # print ("注册成功")
                                 # resiget_info_arrey=['手机号码不能为空',
                                 #                     '请填写正确的手机号码'
                                 #                     '密码不能为空',
@@ -524,7 +518,7 @@ class TestNewResiget(unittest.TestCase):
 
                                     # -----------------------------------#
 
-                                    print ("用户信息写入正确，请查看！！！")
+                                    print ("该用户注册信息写入成功，请查看！！！")
 
                                     # -----------------------------------#
 
@@ -556,7 +550,7 @@ class TestNewResiget(unittest.TestCase):
 
                                             #----------------------------------------------------------------------------------#
 
-                                            print ("该账号为成人/青少体验学员类型：财富已过期或已预约体验课，直接进入体验账号会员中心啦~")
+                                            print (str(user_mobile) + "该账号为成人/青少体验学员类型：财富已过期或已预约体验课，直接进入会员中心查看记录")
 
                                             #----------------------------------------------------------------------------------#
 
@@ -571,7 +565,7 @@ class TestNewResiget(unittest.TestCase):
                                             sleep(2)
 
                                             # 调用约体验课
-                                            user_experience_cadets_success(driver, current_window_handle, str(user_id),str(user_mobile))
+                                            # user_experience_cadets_success(driver, current_window_handle, str(user_id),str(user_mobile))
 
                                             #查询体验用户财富信息
                                             # wealth_data = user_experience_the_wealth_success(driver,login_after_link,str(user_id),str(user_mobile))
@@ -588,7 +582,7 @@ class TestNewResiget(unittest.TestCase):
 
                                                 #--------------------------------------------------------#
 
-                                                print (user_mobile + "该账号为成人/青少体验学员，进入成人/青少体验约课页面～")
+                                                print (str(user_mobile) + "该账号为成人/青少体验学员类型，还没有约课，请先进行体验课约课")
 
                                                 # -------------------------------------------------------#
 
@@ -612,7 +606,7 @@ class TestNewResiget(unittest.TestCase):
 
                                                     # -----------------------------------#
 
-                                                    print ("用户信息写入成功，请查看！！！")
+                                                    print ("该用户信息财富写入成功，请查看！！！")
 
                                                     # -----------------------------------#
 
@@ -679,7 +673,7 @@ class TestNewResiget(unittest.TestCase):
                                                     sleep(2)
 
                                                 # 调用约体验课
-                                                user_experience_cadets_success(driver, current_window_handle, str(user_id),str(user_mobile))
+                                                # user_experience_cadets_success(driver, current_window_handle, str(user_id),str(user_mobile))
 
                                                 #查询体验用户财富信息
                                                 # wealth_data = user_experience_the_wealth_success(driver, login_after_link,str(user_id),str(user_mobile))
@@ -758,7 +752,7 @@ class TestNewResiget(unittest.TestCase):
 
                                             #--------------------------------------#
 
-                                            print ("注册成功，但不能操作，请查看原因：")
+                                            print ("该用户注册成功，但不能操作，请查看原因：")
 
                                             #--------------------------------------#
 
@@ -844,6 +838,7 @@ class TestNewResiget(unittest.TestCase):
 
             for line in read_resiget_fail_txt:
 
+                line = line.decode("utf-8")
                 user_mobile     = line.split(',')[0]
                 user_password   = line.split(',')[1]
 
@@ -853,6 +848,14 @@ class TestNewResiget(unittest.TestCase):
 
                 #手机号输入框
                 driver.find_element_by_xpath("/html/body/div[2]/div/div/div[2]/div/form/ul[2]/li[1]/dl/dd/input").send_keys(user_mobile)
+                sleep(1)
+
+                #点击密码框
+                driver.find_element_by_xpath("/html/body/div[2]/div/div/div[2]/div/form/ul[2]/li[2]/dl/dd/input").click()
+                sleep(1)
+
+                #手机号输入框
+                driver.find_element_by_xpath("/html/body/div[2]/div/div/div[2]/div/form/ul[2]/li[1]/dl/dd/input").click()
                 sleep(1)
 
                 #点击密码框
@@ -895,7 +898,7 @@ class TestNewResiget(unittest.TestCase):
 
                             #---------------------#
 
-                            print ("登录链接正确～")
+                            print ("获取登录链接正确～")
 
                             #---------------------#
 
@@ -910,7 +913,7 @@ class TestNewResiget(unittest.TestCase):
 
                             #------------------------#
 
-                            print ("找回密码链接正确～")
+                            print ("获取找回密码链接正确～")
 
                             #------------------------#
 
@@ -920,7 +923,8 @@ class TestNewResiget(unittest.TestCase):
 
                     sleep(1)
 
-                    startPageComeInto(driver)
+                    # 进入青少官网后只显示一次启动页弹框
+                    # startPageComeInto(driver)
 
                     sleep(1)
 
@@ -966,7 +970,18 @@ class TestNewResiget(unittest.TestCase):
 
                         resiget_text_info_2 = driver.find_element_by_xpath("//*[@id='index']/div/div/div[2]/div/form/ul[2]/li[2]/div").text
 
-                        if resiget_text_info_1 == u'*手机号码不能为空':
+                        if resiget_text_info_1 == u'*请填写正确的手机号码' and \
+                           resiget_text_info_2 == u'*密码格式错误':
+
+                            print ("#------------------------------------------------------#")
+
+                            print (u"该手机号：" + user_mobile + u",格式错误，请重新输入！！！")
+
+                            print (u"该密码为：" + user_password + u",格式错误，请重新输入6--20位字符")
+
+                            print ("#------------------------------------------------------#" + "\n")
+
+                        elif resiget_text_info_1 == u'*手机号码不能为空':
 
                             print ("#-------------------------------#")
 
@@ -975,7 +990,7 @@ class TestNewResiget(unittest.TestCase):
                             print ("#-------------------------------#" + "\n")
 
 
-                        if resiget_text_info_1 == u'*请填写正确的手机号码':
+                        elif resiget_text_info_1 == u'*请填写正确的手机号码':
 
                             print ("#------------------------------------------------------#")
 
@@ -983,7 +998,7 @@ class TestNewResiget(unittest.TestCase):
 
                             print ("#------------------------------------------------------#" + "\n")
 
-                        if resiget_text_info_2 == u'*密码不能为空':
+                        elif resiget_text_info_2 == u'*密码不能为空':
 
                             print ("#-----------------------------#")
 
@@ -992,14 +1007,14 @@ class TestNewResiget(unittest.TestCase):
 
                             print ("#-----------------------------#" + "\n")
 
-                        if resiget_text_info_2 == u'*密码格式错误':
+                        elif resiget_text_info_2 == u'*密码格式错误':
 
-                            print ("#-------------------------------------------------------------#")
+                             print ("#-------------------------------------------------------------#")
 
-                            print (u"该手机为：" + user_mobile)
-                            print (u"该密码为：" + user_password + u",格式错误，请重新输入6--20位字符")
+                             print (u"该手机为：" + user_mobile)
+                             print (u"该密码为：" + user_password + u",格式错误，请重新输入6--20位字符")
 
-                            print ("#-------------------------------------------------------------#" + "\n")
+                             print ("#-------------------------------------------------------------#" + "\n")
 
                         sleep(2)
 
@@ -1061,6 +1076,7 @@ class TestNewResiget(unittest.TestCase):
 
                 for i in read_resiget_success_txt:
 
+                    i = i.decode("utf-8")
                     user_mobile = i.split(',')[0]
                     user_password = i.split(',')[1]
                     user_recommenMobile = i.split(',')[3]
@@ -1246,6 +1262,8 @@ class TestNewResiget(unittest.TestCase):
                                             #调取文件读操作
                                             # jiequ_code = user_file_r_operation()
 
+                                    driver.close()
+
                                     driver.switch_to_window(current_window_handle)
 
                                     sleep(2)
@@ -1318,457 +1336,454 @@ class TestNewResiget(unittest.TestCase):
 
                                                     sleep(1)
 
-                                            else:
+                                    except:
 
-                                                    flag_resiget_succes_tips = False
+                                        flag_resiget_succes_tips = False
 
-                                                    # 调取后台stu_list表，验证手机号
-                                                    js = 'window.open("http://www.51talk.com/admin/admin_login.php")'
+                                        # 调取后台stu_list表，验证手机号
+                                        js = 'window.open("http://www.51talk.com/admin/admin_login.php")'
 
-                                                    driver.execute_script(js)
+                                        driver.execute_script(js)
 
-                                                    handles = driver.window_handles
+                                        handles = driver.window_handles
 
-                                                    for current_handle in handles:
+                                        for current_handle in handles:
 
-                                                        if current_handle != current_window_handle:
+                                            if current_handle != current_window_handle:
 
-                                                            driver.switch_to_window(current_handle)
+                                                driver.switch_to_window(current_handle)
 
-                                                            sleep(2)
+                                                sleep(2)
 
-                                                            # 调用后台stu_list查询user_id
-                                                            user_id = user_stu_list_query_user_user_id(driver,user_mobile)
+                                                # 调用后台stu_list查询user_id
+                                                user_id = user_stu_list_query_user_user_id(driver,user_mobile)
 
-                                                            driver.close()
+                                                driver.close()
 
-                                                    sleep(1)
+                                        sleep(1)
 
-                                                    driver.switch_to_window(current_window_handle)
+                                        driver.switch_to_window(current_window_handle)
 
-                                                    sleep(1)
+                                        sleep(1)
 
-                                                    #注册页注册信息写入数据库
-                                                    userInformation_db_resiget_page_insert_success(user_id,user_mobile,user_password,insert_user_id,current_now_time)
+                                        #注册页注册信息写入数据库
+                                        userInformation_db_resiget_page_insert_success(user_id,user_mobile,user_password,insert_user_id,current_now_time)
 
-                                                    # -----------------------------------#
+                                        # -----------------------------------#
 
-                                                    print ("用户信息写入正确，请查看！！！")
+                                        print ("该用户注册信息写入成功，请查看！！！")
 
-                                                    # -----------------------------------#
+                                        # -----------------------------------#
 
-                                                    #判断元素是否找到
+                                        #判断元素是否找到
+                                        try:
+                                            driver.find_element(By.XPATH,"//*[@id='usersSelect']/div[4]/div/div[1]/h3")
+                                            # print (u"找到该元素！！！")
+
+                                            flag_resiget_succes_tips = True
+
+                                        except:
+
+                                            # print (u"没有找到该元素！！！")
+                                            flag_resiget_succes_tips =  False
+
+                                        if flag_resiget_succes_tips == True:
+
+                                            sleep(2)
+
+                                            #调取学员身份选择功能
+                                            user_identity_select_info(driver)
+
+                                            resiget_after_link = driver.current_url
+
+                                            #成人/青少付费账号
+                                            if resiget_after_link == "https://www.51talk.com/user/index" or \
+                                               resiget_after_link == "http://www.51talk.com/user/index":
+
+                                                    #----------------------------------------------------#
+
+                                                    print (str(user_mobile) + "该账号为成人/青少付费学员类型")
+
+                                                    #----------------------------------------------------#
+
                                                     try:
-                                                        driver.find_element(By.XPATH,"//*[@id='usersSelect']/div[4]/div/div[1]/h3")
-                                                        # print (u"找到该元素！！！")
 
-                                                        flag_resiget_succes_tips = True
+                                                        user_center_layer_operation(driver)
 
                                                     except:
 
-                                                        # print (u"没有找到该元素！！！")
-                                                        flag_resiget_succes_tips =  False
+                                                        pass
 
-                                                    if flag_resiget_succes_tips == True:
+                                                    sleep(2)
+
+                                                    #查询付费用户财富信息
+                                                    # wealth_data = user_paid_the_wealth_success(driver, str(user_id), str(user_mobile))
+
+                                                    sleep(2)
+
+                                                    #预约公开课
+                                                    # user_open_class_success(driver, current_window_handle,resiget_after_link, wealth_data, str(user_id), str(user_mobile))
+
+                                                    sleep(2)
+
+                                                    #预约精品小班课
+                                                    # user_fine_class_success(driver,current_window_handle,wealth_data,str(user_id), str(user_mobile))
+
+                                            #成人/青少体验账号，直接进入会员中心 or 体验课约课页面
+                                            elif resiget_after_link == "http://trial.51talk.com/trial/index" or \
+                                                 resiget_after_link == "https://trial.51talk.com/trial/index":
+
+                                                    #---------------------------------------------------------------------------------#
+
+                                                    print (str(user_mobile) + "该账号为成人/青少体验学员类型：财富已过期或已预约体验课，直接进入会员中心查看记录")
+
+                                                    #---------------------------------------------------------------------------------#
+
+                                                    try:
+
+                                                        user_center_layer_operation(driver)
+
+                                                    except:
+
+                                                        pass
+
+                                                    sleep(2)
+
+                                                    # 调用约体验课
+                                                    user_experience_cadets_success(driver,current_window_handle,str(user_id),str(user_mobile))
+
+                                                    #查询体验用户财富信息
+                                                    # wealth_data = user_experience_the_wealth_success(driver,resiget_after_link,str(user_id),str(user_mobile))
+
+                                                    #预约公开课
+                                                    # user_open_class_success(driver,current_window_handle,resiget_after_link,wealth_data,str(user_id),str(user_mobile))
+
+                                                    #预约精品小班课
+                                                    # user_fine_class_success(driver, current_window_handle, wealth_data,str(user_id),str(user_mobile))
+
+                                            #成人/青少体验账号，进入体验约课页面
+                                            elif resiget_after_link == "http://trial.51talk.com/trial/reserve" or \
+                                                 resiget_after_link == "https://trial.51talk.com/trial/reserve":
+
+                                                    #---------------------------------------------------------------#
+
+                                                    print (str(user_mobile) + "该账号为成人/青少体验学员类型，还没有约课，请先进行体验课约课")
+
+                                                    #---------------------------------------------------------------#
+
+                                                    # 获取用户user_wealth表point
+                                                    db_wealth_data = userInformation_db_query_wealth_point_success(user_mobile)
+
+                                                    sleep(1)
+
+                                                    if db_wealth_data == ():
+
+                                                        point = "1"
+
+                                                        point_validity = None
+
+                                                        classtime = ""
+
+                                                        # 插入user_wealth表point
+                                                        userInformation_db_wealth_data_insert_success(user_id,
+                                                                                                      user_mobile,
+                                                                                                      point,
+                                                                                                      point_validity,
+                                                                                                      classtime,
+                                                                                                      current_now_time)
+
+                                                        # -----------------------------------#
+
+                                                        print ("该用户信息财富写入成功，请查看！！！")
+
+                                                        # -----------------------------------#
+
+                                                        sleep(1)
+
+                                                    #手机号验证
+                                                    try:
+
+                                                        #手机验证(便于接收上课短信通知)
+                                                        driver.find_element_by_xpath("//*[@id='mobileCode']/h3")
+
+                                                        #----------------------------------------#
+
+                                                        print ("该手机号没有验证，请先验证手机号吧～")
+
+                                                        #----------------------------------------#
 
                                                         sleep(2)
 
-                                                        #调取学员身份选择功能
-                                                        user_identity_select_info(driver)
+                                                        #触发滑块验证平台，获取验证码老是失败，通过不了
+                                                        # user_experience_class_slider_validation_mobile(driver,current_window_handle)
 
-                                                        resiget_after_link = driver.current_url
+                                                        #调取手机短信平台
+                                                        # js ='window.open("http://sms.51talk.com/Admin/Login/login");'
 
-                                                        #成人/青少付费账号
-                                                        if resiget_after_link == "https://www.51talk.com/user/index" or \
-                                                           resiget_after_link == "http://www.51talk.com/user/index":
+                                                        #调取后台stu_list表，验证手机号
+                                                        js ='window.open("http://www.51talk.com/admin/admin_login.php")'
 
-                                                                #----------------------------------------------------#
+                                                        driver.execute_script(js)
 
-                                                                print ("该账号为成人/青少付费学员类型，直接进入会员中心啦～")
+                                                        handles = driver.window_handles
 
-                                                                #----------------------------------------------------#
+                                                        for current_handle in handles:
 
-                                                                try:
+                                                            if current_handle != current_window_handle:
 
-                                                                    user_center_layer_operation(driver)
-
-                                                                except:
-
-                                                                    pass
+                                                                driver.switch_to_window(current_handle)
 
                                                                 sleep(2)
 
-                                                                #查询付费用户财富信息
-                                                                # wealth_data = user_paid_the_wealth_success(driver, str(user_id), str(user_mobile))
+                                                                #调取后台stu_list表，验证手机号
+                                                                user_stu_list_verify_mobile_status(driver,user_mobile)
+
+                                                                #调取手机短信平台
+                                                                # user_sms_platform_info(driver,user_mobile)
 
                                                                 sleep(2)
 
-                                                                #预约公开课
-                                                                # user_open_class_success(driver, current_window_handle,resiget_after_link, wealth_data, str(user_id), str(user_mobile))
+                                                        driver.switch_to_window(current_window_handle)
+
+                                                        sleep(2)
+
+                                                        driver.refresh()
+
+                                                    #直接约成人/青少体验课
+                                                    except:
+
+                                                        #------------------------------------#
+
+                                                        print ("该手机号已验证，请选择体验课吧～")
+
+                                                        #------------------------------------#
+
+                                                        sleep(2)
+
+                                                    # 调用约体验课
+                                                    # user_experience_cadets_success(driver,current_window_handle,str(user_id),str(user_mobile))
+
+                                                    #查询体验用户财富信息
+                                                    #wealth_data = user_experience_the_wealth_success(driver,resiget_after_link, str(user_id),str(user_mobile))
+
+                                                    #预约公开课
+                                                    # user_open_class_success(driver, current_window_handle,resiget_after_link, wealth_data,str(user_id),str(user_mobile))
+
+                                                    #预约精品小班课
+                                                    # user_fine_class_success(driver, current_window_handle, wealth_data,str(user_id),str(user_mobile))
+
+                                            #美小付费账号
+                                            elif resiget_after_link == "http://aa.51talk.com/user/index" or \
+                                                 resiget_after_link == "https://aa.51talk.com/user/index":
+
+                                                    #------------------------------------------------------#
+
+                                                    print (user_mobile + "该账号为美小付费学员类型")
+
+                                                    #------------------------------------------------------#
+
+                                                    try:
+
+                                                        user_center_layer_operation(driver)
+
+                                                    except:
+
+                                                        pass
+
+                                            #美小体验账号，直接进入体验约课页面
+                                            elif resiget_after_link == "http://aa.51talk.com/nat/trial/reserve_new?date=" or \
+                                                 resiget_after_link == "https://aa.51talk.com/nat/trial/reserve_new?date=":
+
+                                                    try:
+
+                                                        user_center_layer_operation(driver)
+
+                                                    except:
+
+                                                        pass
+
+                                                    #手机号验证
+                                                    try:
+
+                                                        #手机验证(便于接收上课短信通知)
+                                                        driver.find_element_by_xpath("/html/body/div[2]/div[5]/h3")
+
+                                                        #----------------------------------------#
+
+                                                        print ("该手机号没有验证，请先验证手机号吧～")
+
+                                                        #----------------------------------------#
+
+                                                        sleep(2)
+
+                                                        #调取手机短信平台
+                                                        # js ='window.open("http://sms.51talk.com/Admin/Login/login");'
+
+                                                        #调取后台stu_list表，验证手机号
+                                                        js ='window.open("http://www.51talk.com/admin/admin_login.php")'
+
+                                                        driver.execute_script(js)
+
+                                                        handles = driver.window_handles
+
+                                                        for current_handle in handles:
+
+                                                            if current_handle != current_window_handle:
+
+                                                                driver.switch_to_window(current_handle)
 
                                                                 sleep(2)
 
-                                                                #预约精品小班课
-                                                                # user_fine_class_success(driver,current_window_handle,wealth_data,str(user_id), str(user_mobile))
+                                                                #调取后台stu_list表，验证手机号
+                                                                user_stu_list_verify_mobile_status(driver,user_mobile)
 
-                                                        #成人/青少体验账号，直接进入会员中心 or 体验课约课页面
-                                                        elif resiget_after_link == "http://trial.51talk.com/trial/index" or \
-                                                             resiget_after_link == "https://trial.51talk.com/trial/index":
-
-                                                                #---------------------------------------------------------------------------------#
-
-                                                                print ("该账号为成人/青少体验学员类型：财富已过期或已预约体验课，直接进入体验账号会员中心啦~")
-
-                                                                #---------------------------------------------------------------------------------#
-
-                                                                try:
-
-                                                                    user_center_layer_operation(driver)
-
-                                                                except:
-
-                                                                    pass
+                                                                #调取手机短信平台
+                                                                # user_sms_platform_info(driver,user_mobile)
 
                                                                 sleep(2)
 
-                                                                # 调用约体验课
-                                                                user_experience_cadets_success(driver,current_window_handle,str(user_id),str(user_mobile))
+                                                        driver.switch_to_window(current_window_handle)
 
-                                                                #查询体验用户财富信息
-                                                                # wealth_data = user_experience_the_wealth_success(driver,resiget_after_link,str(user_id),str(user_mobile))
+                                                        sleep(2)
 
-                                                                #预约公开课
-                                                                # user_open_class_success(driver,current_window_handle,resiget_after_link,wealth_data,str(user_id),str(user_mobile))
+                                                        driver.refresh()
 
-                                                                #预约精品小班课
-                                                                # user_fine_class_success(driver, current_window_handle, wealth_data,str(user_id),str(user_mobile))
+                                                    #直接约美小体验课
+                                                    except:
 
-                                                        #成人/青少体验账号，进入体验约课页面
-                                                        elif resiget_after_link == "http://trial.51talk.com/trial/reserve" or \
-                                                             resiget_after_link == "https://trial.51talk.com/trial/reserve":
+                                                        #------------------------------------#
 
-                                                                #---------------------------------------------------------------#
+                                                        print ("该手机号已验证，请选择体验课吧～")
 
-                                                                print (user_mobile + "该账号为成人/青少体验学员类型，还没有约课，请先进行体验课约课啦~")
+                                                        #------------------------------------#
 
-                                                                #---------------------------------------------------------------#
+                                            #美小体验账号，直接进入会员中心
+                                            elif resiget_after_link == "http://aa.51talk.com/trial/index" or \
+                                                 resiget_after_link == "https://aa.51talk.com/trial/index":
 
-                                                                # 获取用户user_wealth表point
-                                                                db_wealth_data = userInformation_db_query_wealth_point_success(user_mobile)
+                                                    try:
 
-                                                                sleep(1)
+                                                        user_center_layer_operation(driver)
 
-                                                                if db_wealth_data == ():
+                                                    except:
 
-                                                                    point = "1"
+                                                        pass
 
-                                                                    point_validity = None
 
-                                                                    classtime = ""
+                                                    #判断美小预约课程按钮是否存在
+                                                    try:
 
-                                                                    # 插入user_wealth表point
-                                                                    userInformation_db_wealth_data_insert_success(user_id,
-                                                                                                                  user_mobile,
-                                                                                                                  point,
-                                                                                                                  point_validity,
-                                                                                                                  classtime,
-                                                                                                                  current_now_time)
+                                                        #预约体验课按钮
+                                                        driver.find_element_by_xpath("//*[@id='container']/div/div[1]/div/div/div[2]/a")
 
-                                                                    # -----------------------------------#
+                                                        sleep(2)
 
-                                                                    print ("用户信息写入成功，请查看！！！")
+                                                        #预约体验课按钮点击
+                                                        driver.find_element_by_xpath("//*[@id='container']/div/div[1]/div/div/div[2]/a").click()
 
-                                                                    # -----------------------------------#
-
-                                                                    sleep(1)
-
-                                                                #手机号验证
-                                                                try:
-
-                                                                    #手机验证(便于接收上课短信通知)
-                                                                    driver.find_element_by_xpath("//*[@id='mobileCode']/h3")
-
-                                                                    #----------------------------------------#
-
-                                                                    print ("该手机号没有验证，请先验证手机号吧～")
-
-                                                                    #----------------------------------------#
-
-                                                                    sleep(2)
-
-                                                                    #触发滑块验证平台，获取验证码老是失败，通过不了
-                                                                    # user_experience_class_slider_validation_mobile(driver,current_window_handle)
-
-                                                                    #调取手机短信平台
-                                                                    # js ='window.open("http://sms.51talk.com/Admin/Login/login");'
-
-                                                                    #调取后台stu_list表，验证手机号
-                                                                    js ='window.open("http://www.51talk.com/admin/admin_login.php")'
-
-                                                                    driver.execute_script(js)
-
-                                                                    handles = driver.window_handles
-
-                                                                    for current_handle in handles:
-
-                                                                        if current_handle != current_window_handle:
-
-                                                                            driver.switch_to_window(current_handle)
-
-                                                                            sleep(2)
-
-                                                                            #调取后台stu_list表，验证手机号
-                                                                            user_stu_list_verify_mobile_status(driver,user_mobile)
-
-                                                                            #调取手机短信平台
-                                                                            # user_sms_platform_info(driver,user_mobile)
-
-                                                                            sleep(2)
-
-                                                                    driver.switch_to_window(current_window_handle)
-
-                                                                    sleep(2)
-
-                                                                    driver.refresh()
-
-                                                                #直接约成人/青少体验课
-                                                                except:
-
-                                                                    #------------------------------------#
-
-                                                                    print ("该手机号已验证，请选择体验课吧～")
-
-                                                                    #------------------------------------#
-
-                                                                    sleep(2)
-
-                                                                # 调用约体验课
-                                                                user_experience_cadets_success(driver,current_window_handle,str(user_id),str(user_mobile))
-
-                                                                #查询体验用户财富信息
-                                                                #wealth_data = user_experience_the_wealth_success(driver,resiget_after_link, str(user_id),str(user_mobile))
-
-                                                                #预约公开课
-                                                                # user_open_class_success(driver, current_window_handle,resiget_after_link, wealth_data,str(user_id),str(user_mobile))
-
-                                                                #预约精品小班课
-                                                                # user_fine_class_success(driver, current_window_handle, wealth_data,str(user_id),str(user_mobile))
-
-                                                        #美小付费账号
-                                                        elif resiget_after_link == "http://aa.51talk.com/user/index" or \
-                                                             resiget_after_link == "https://aa.51talk.com/user/index":
-
-                                                                #------------------------------------------------------#
-
-                                                                print ("该账号为美小付费学员类型，直接进入体验账号会员中心啦~")
-
-                                                                #------------------------------------------------------#
-
-                                                                try:
-
-                                                                    user_center_layer_operation(driver)
-
-                                                                except:
-
-                                                                    pass
-
-                                                        #美小体验账号，直接进入体验约课页面
-                                                        elif resiget_after_link == "http://aa.51talk.com/nat/trial/reserve_new?date=" or \
-                                                             resiget_after_link == "https://aa.51talk.com/nat/trial/reserve_new?date=":
-
-                                                                try:
-
-                                                                    user_center_layer_operation(driver)
-
-                                                                except:
-
-                                                                    pass
-
-                                                                #手机号验证
-                                                                try:
-
-                                                                    #手机验证(便于接收上课短信通知)
-                                                                    driver.find_element_by_xpath("/html/body/div[2]/div[5]/h3")
-
-                                                                    #----------------------------------------#
-
-                                                                    print ("该手机号没有验证，请先验证手机号吧～")
-
-                                                                    #----------------------------------------#
-
-                                                                    sleep(2)
-
-                                                                    #调取手机短信平台
-                                                                    # js ='window.open("http://sms.51talk.com/Admin/Login/login");'
-
-                                                                    #调取后台stu_list表，验证手机号
-                                                                    js ='window.open("http://www.51talk.com/admin/admin_login.php")'
-
-                                                                    driver.execute_script(js)
-
-                                                                    handles = driver.window_handles
-
-                                                                    for current_handle in handles:
-
-                                                                        if current_handle != current_window_handle:
-
-                                                                            driver.switch_to_window(current_handle)
-
-                                                                            sleep(2)
-
-                                                                            #调取后台stu_list表，验证手机号
-                                                                            user_stu_list_verify_mobile_status(driver,user_mobile)
-
-                                                                            #调取手机短信平台
-                                                                            # user_sms_platform_info(driver,user_mobile)
-
-                                                                            sleep(2)
-
-                                                                    driver.switch_to_window(current_window_handle)
-
-                                                                    sleep(2)
-
-                                                                    driver.refresh()
-
-                                                                #直接约美小体验课
-                                                                except:
-
-                                                                    #------------------------------------#
-
-                                                                    print ("该手机号已验证，请选择体验课吧～")
-
-                                                                    #------------------------------------#
-
-                                                        #美小体验账号，直接进入会员中心
-                                                        elif resiget_after_link == "http://aa.51talk.com/trial/index" or \
-                                                             resiget_after_link == "https://aa.51talk.com/trial/index":
-
-                                                                try:
-
-                                                                    user_center_layer_operation(driver)
-
-                                                                except:
-
-                                                                    pass
-
-
-                                                                #判断美小预约课程按钮是否存在
-                                                                try:
-
-                                                                    #预约体验课按钮
-                                                                    driver.find_element_by_xpath("//*[@id='container']/div/div[1]/div/div/div[2]/a")
-
-                                                                    sleep(2)
-
-                                                                    #预约体验课按钮点击
-                                                                    driver.find_element_by_xpath("//*[@id='container']/div/div[1]/div/div/div[2]/a").click()
-
-                                                                    #手机号验证
-                                                                    try:
-
-                                                                        #手机验证(便于接收上课短信通知)
-                                                                        driver.find_element_by_xpath("/html/body/div[2]/div[5]/h3")
-
-                                                                        #----------------------------------------#
-
-                                                                        print ("该手机号没有验证，请先验证手机号吧～")
-
-                                                                        #----------------------------------------#
-
-                                                                        sleep(2)
-
-                                                                        #调取手机短信平台
-                                                                        # js ='window.open("http://sms.51talk.com/Admin/Login/login");'
-
-                                                                        #调取后台stu_list表，验证手机号
-                                                                        js ='window.open("http://www.51talk.com/admin/admin_login.php")'
-
-                                                                        driver.execute_script(js)
-
-                                                                        handles = driver.window_handles
-
-                                                                        for current_handle in handles:
-
-                                                                            if current_handle != current_window_handle:
-
-                                                                                driver.switch_to_window(current_handle)
-
-                                                                                sleep(2)
-
-                                                                                #调取后台stu_list表，验证手机号
-                                                                                user_stu_list_verify_mobile_status(driver,user_mobile)
-
-                                                                                #调取手机短信平台
-                                                                                # user_sms_platform_info(driver,user_mobile)
-
-                                                                                sleep(2)
-
-                                                                        driver.switch_to_window(current_window_handle)
-
-                                                                        sleep(2)
-
-                                                                        driver.refresh()
-
-                                                                    #直接约美小体验课
-                                                                    except:
-
-                                                                        #------------------------------------#
-
-                                                                        print ("该手机号已验证，请选择体验课吧～")
-
-                                                                        #------------------------------------#
-
-                                                                except:
-
-                                                                    #--------------------------------------------------#
-
-                                                                    print ("没有找到美小预约体验课按钮，无法进行约体验课哦~")
-
-                                                                    #--------------------------------------------------#
-                                                        else:
-
-                                                            #--------------------------------------#
-
-                                                            print ("注册成功，但不能操作，请查看原因：")
-
-                                                            #--------------------------------------#
-
-                                                        # 退出51TALK会员中心
+                                                        #手机号验证
                                                         try:
 
-                                                            driver.find_element_by_xpath("//*[@id='jsHead']/div[1]/div/a[3]")
+                                                            #手机验证(便于接收上课短信通知)
+                                                            driver.find_element_by_xpath("/html/body/div[2]/div[5]/h3")
+
+                                                            #----------------------------------------#
+
+                                                            print ("该手机号没有验证，请先验证手机号吧～")
+
+                                                            #----------------------------------------#
 
                                                             sleep(2)
 
-                                                            driver.find_element_by_xpath("//*[@id='jsHead']/div[1]/div/a[3]").click()
+                                                            #调取手机短信平台
+                                                            # js ='window.open("http://sms.51talk.com/Admin/Login/login");'
+
+                                                            #调取后台stu_list表，验证手机号
+                                                            js ='window.open("http://www.51talk.com/admin/admin_login.php")'
+
+                                                            driver.execute_script(js)
+
+                                                            handles = driver.window_handles
+
+                                                            for current_handle in handles:
+
+                                                                if current_handle != current_window_handle:
+
+                                                                    driver.switch_to_window(current_handle)
+
+                                                                    sleep(2)
+
+                                                                    #调取后台stu_list表，验证手机号
+                                                                    user_stu_list_verify_mobile_status(driver,user_mobile)
+
+                                                                    #调取手机短信平台
+                                                                    # user_sms_platform_info(driver,user_mobile)
+
+                                                                    sleep(2)
+
+                                                            driver.switch_to_window(current_window_handle)
 
                                                             sleep(2)
 
+                                                            driver.refresh()
+
+                                                        #直接约美小体验课
                                                         except:
 
-                                                            pass
+                                                            #------------------------------------#
 
-                                                        sleep(2)
+                                                            print ("该手机号已验证，请选择体验课吧～")
 
-                                                        if xunhuan_resiget_index == xunhuan_resiget_max - 1:
+                                                            #------------------------------------#
 
-                                                            pass
+                                                    except:
 
-                                                        else:
+                                                        #--------------------------------------------------#
 
-                                                            print ("\n")
+                                                        print ("没有找到美小预约体验课按钮，无法进行约体验课哦~")
 
-                                                    else:
+                                                        #--------------------------------------------------#
+                                            else:
 
-                                                        #----------------------------#
+                                                #--------------------------------------#
 
-                                                        print ("注册异常，请查看原因：")
+                                                print ("注册成功，返回页面不正确，请查看原因！")
 
-                                                        #----------------------------#
+                                                #--------------------------------------#
 
-                                    except:
+                                            # 退出51TALK会员中心
+                                            try:
 
-                                        pass
+                                                driver.find_element_by_xpath("//*[@id='jsHead']/div[1]/div/a[3]")
+
+                                                sleep(2)
+
+                                                driver.find_element_by_xpath("//*[@id='jsHead']/div[1]/div/a[3]").click()
+
+                                                sleep(2)
+
+                                            except:
+
+                                                pass
+
+                                            sleep(2)
+
+                                            if xunhuan_resiget_index == xunhuan_resiget_max - 1:
+
+                                                pass
+
+                                            else:
+
+                                                print ("\n")
+
+                                        else:
+
+                                            #---------------------------------------#
+
+                                            print ("注册成功，返回页面不正确，请查看原因！")
+
+                                            #---------------------------------------#
+
                             except:
 
                                 pass
@@ -1813,31 +1828,32 @@ class TestNewResiget(unittest.TestCase):
             sleep(1)
 
             # 读入文件--xlsx
-            read_login_fail_xlsx = dqXlsResigetFail()
-
-            for i in range(1, len(read_login_fail_xlsx)):
-
-                user_account = int(read_login_fail_xlsx[i][0])
-                user_password = int(read_login_fail_xlsx[i][1])
-                user_english_name = read_login_fail_xlsx[i][2]
-                user_tuijian_mobile = int(read_login_fail_xlsx[i][3])
+            # read_login_fail_xlsx = dqXlsResigetFail()
+            #
+            # for i in range(1, len(read_login_fail_xlsx)):
+            #
+            #     user_mobile = int(read_login_fail_xlsx[i][0])
+            #     user_password = int(read_login_fail_xlsx[i][1])
+            #     user_english_name = read_login_fail_xlsx[i][2]
+            #     user_tuijian_mobile = int(read_login_fail_xlsx[i][3])
 
             # 读入文件--txt
             read_resiget_fail_txt = readResigetFailFile()
 
             for line in read_resiget_fail_txt:
 
+                line = line.decode("utf-8")
                 user_mobile         = line.split(',')[0]
                 user_password       = line.split(',')[1]
                 user_code           = line.split(',')[2]
                 user_recommenMobile = line.split(',')[3]
 
-                sleep(2)
+                sleep(1)
 
                 #输入手机号
                 driver.find_element_by_xpath("//*[@id='mobile']").send_keys(user_mobile)
 
-                sleep(2)
+                sleep(1)
 
                 #滑块
                 huakuai = "//*[@id='container']/form/div/div/div[2]/div/div[2]"
@@ -1857,182 +1873,142 @@ class TestNewResiget(unittest.TestCase):
 
                 sleep(2)
 
-                #输入短信验证码
-                driver.find_element_by_xpath("//*[@id='code']").send_keys(user_code)
-
-                sleep(2)
-
-                #输入密码
-                driver.find_element_by_xpath("//*[@id='password']").send_keys(user_password)
-
-                sleep(2)
-
-                #输入邀请人手机号
-                driver.find_element_by_xpath("//*[@id='recommenMobile']").send_keys(user_recommenMobile)
-
-                sleep(2)
-
-                #免费注册
-                driver.find_element_by_xpath("//*[@id='registerBtn']").click()
-                sleep(2)
-
-                #错误提示
                 try:
 
-                    if driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[1]/div[2]/div") or \
-                       driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[3]/div[2]/div") or \
-                       driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[4]/div[2]/div"):
+                    driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[1]/div[2]/div")
 
-                        resiget_info_arrey=['请输入手机号',
-                                            '手机号格式错误，请重新输入',
-                                            '该手机号码已存在，请直接登录，或使用其他号码注册',
-                                            '请输入验证码',
-                                            '验证码格式有误，请重新输入',
-                                            '请输入密码',
-                                            '密码长度只能是6-20位字符',]
+                    resiget_info_arrey=['请输入手机号',
+                                        '手机号格式错误，请重新输入',
+                                        '该手机号码已存在，请直接登录，或使用其他号码注册']
 
-                        resiget_error_text_1 = driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[1]/div[2]/div").text
+                    resiget_error_text_1 = driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[1]/div[2]/div").text
 
-                        resiget_error_text_2 = driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[3]/div[2]/div").text
+                    if resiget_error_text_1 == "请输入手机号" or \
+                       resiget_error_text_1 == "手机号格式错误，请重新输入" or \
+                       resiget_error_text_1 == "该手机号码已存在，请直接登录，或使用其他号码注册":
 
-                        resiget_error_text_3 = driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[4]/div[2]/div").text
+                        driver.refresh()
 
-                        resiget_error_flag = False
+                    else:
 
-                        if resiget_error_text_1 == u"请输入手机号" and resiget_error_text_2 == u"请输入验证码" and resiget_error_text_3 == u"请输入密码":
+                        #输入短信验证码
+                        driver.find_element_by_xpath("//*[@id='code']").send_keys(user_code)
 
-                            print ("#--------------------------------------------#")
+                        sleep(2)
 
-                            print ("该手机号、验证码、密码都输入为空，请重新输入！！！")
+                        #输入密码
+                        driver.find_element_by_xpath("//*[@id='password']").send_keys(user_password)
 
-                            print ("#--------------------------------------------#")
+                        sleep(2)
 
-                            resiget_error_flag = True
+                        #输入邀请人手机号
+                        driver.find_element_by_xpath("//*[@id='recommenMobile']").send_keys(user_recommenMobile)
 
-                        elif resiget_error_text_1 == u"请输入手机号":
+                        sleep(2)
 
-                            print ("#--------------------------------------------#")
+                        #免费注册
+                        driver.find_element_by_xpath("//*[@id='registerBtn']").click()
+                        sleep(2)
 
-                            print ("该手机号输入为空，请重新输入！！！")
-
-                            print ("#--------------------------------------------#")
-
-                            resiget_error_flag = True
-
-                        elif resiget_error_text_1 == u"手机号格式错误，请重新输入":
-
-                            print ("#-----------------------------------------------------------#")
-
-                            print ("该手机号为：" + user_mobile + "，该手机格式错误，请重新输入！！！")
-
-                            print ("#-----------------------------------------------------------#")
-
-                            resiget_error_flag = True
-
-                        elif resiget_error_text_1 == u"该手机号码已存在，请直接登录，或使用其他号码注册":
-
-                            print ("#----------------------------------------------------------#")
-
-                            print ("该手机号为：" + user_mobile + "，该手机已注册，请重新输入！！！")
-
-                            print ("#----------------------------------------------------------#")
-
-                            resiget_error_flag = True
-
-                        elif resiget_error_text_2 == u"请输入验证码":
-
-                            print ("#------------------------#")
-
-                            print ("该手机号为：" + user_mobile)
-
-                            print ("该验证码输入为空，请重新输入！！！")
-
-                            print ("#------------------------#")
-
-                            resiget_error_flag = True
-
-                        elif resiget_error_text_2 == u"验证码格式有误，请重新输入":
-
-                            print ("#-----------------------------------------------------------#")
-
-                            print ("该手机号为：" + user_mobile)
-
-                            print ("该验证码为：" + user_code + "，该验证码格式错误，请重新输入！！！")
-
-                            print ("#-----------------------------------------------------------#")
-
-                            resiget_error_flag = True
-
-                        elif resiget_error_text_3 == u"请输入密码":
-
-                            print ("#-----------------------------------------------------------#")
-
-                            print ("该手机号为：" + user_mobile)
-
-                            print ("该验证码为：" + user_code)
-
-                            print ("该密码为输入为空，请重新输入！！！")
-
-                            print ("#-----------------------------------------------------------#")
-
-                            resiget_error_flag = True
-
-                        elif resiget_error_text_3 == u"密码长度只能是6-20位字符":
-
-                            print ("#------------------------------------------------------------#")
-
-                            print ("该手机号为：" + user_mobile)
-
-                            print ("该验证码为：" + user_code)
-
-                            print ("该密码为：" + user_password + "，该密码格式错误，请重新输入！！！")
-
-                            print ("#------------------------------------------------------------#")
-
-                            resiget_error_flag = True
-
-                        print ("\n")
-
-                        if resiget_error_flag == True:
-
-                            # driver.refresh()
-
-                            sleep(1)
-
+                        #错误提示
                         try:
 
-                            driver.find_element_by_xpath("//*[@id='contentInfo1']")
+                            if driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[3]/div[2]/div") or \
+                               driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[4]/div[2]/div"):
 
-                            mobileCode_error_text = driver.find_element_by_xpath("//*[@id='contentInfo1']").text
+                                resiget_info_arrey=['请输入验证码',
+                                                    '验证码格式有误，请重新输入',
+                                                    '请输入密码',
+                                                    '密码长度只能是6-20位字符',]
 
-                            if mobileCode_error_text == u"错误的邮箱地址或手机号":
+                                resiget_error_text_2 = driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[3]/div[2]/div").text
 
-                                    #----------------------------------------#
+                                resiget_error_text_3 = driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[4]/div[2]/div").text
 
-                                    print ("验证码输入错误，请重新输入～" + "\n")
+                                if resiget_error_text_2 == u"请输入验证码" and resiget_error_text_3 == u"请输入密码":
 
-                                    #----------------------------------------#
+                                    print ("#--------------------------------------------#")
 
-                            elif mobileCode_error_text == u"验证码输入不正确。":
+                                    print ("该手机号为：" + user_mobile)
 
-                                    #----------------------------------------#
+                                    print ("验证码、密码都输入为空，请重新输入！！！")
 
-                                    print ("验证码输入错误，请重新输入～" + "\n")
+                                    print ("#--------------------------------------------#")
 
-                                    #----------------------------------------#
+                                elif resiget_error_text_2 == u"请输入验证码" and resiget_error_text_3 == u"密码长度只能是6-20位字符":
 
-                            #我知道了按钮
-                            driver.find_element_by_xpath("//*[@id='sureId']").click()
+                                    print ("#------------------------#")
 
-                            sleep(1)
+                                    print ("该手机号为：" + user_mobile)
 
-                            driver.refresh()
+                                    print ("该验证码输入为空，请重新获取验证码！！！")
+
+                                    print ("该密码为：" + user_password + "，该密码格式错误，请重新输入！！！")
+
+                                    print ("#------------------------#")
+
+                                elif resiget_error_text_2 == u"验证码格式有误，请重新输入" and resiget_error_text_3 == u"请输入密码":
+
+                                    print ("#-----------------------------------------------------------#")
+
+                                    print ("该手机号为：" + user_mobile)
+
+                                    print ("该验证码为：" + user_code + "，该验证码格式错误，请重新输入！！！")
+
+                                    print ("该密码为输入为空，请重新获取密码！！！")
+
+                                    print ("#-----------------------------------------------------------#")
+
+                                elif resiget_error_text_2 == u"验证码格式有误，请重新输入" and resiget_error_text_3 == u"密码长度只能是6-20位字符":
+
+                                    print ("#-----------------------------------------------------------#")
+
+                                    print ("该手机号为：" + user_mobile)
+
+                                    print ("该验证码为：" + user_code + "，该验证码格式错误，请重新输入！！！")
+
+                                    print ("该密码为：" + user_password + "，该密码格式错误，请重新输入！！！")
+
+                                    print ("#-----------------------------------------------------------#")
+
+                                print ("\n")
+
+                                try:
+
+                                    driver.find_element_by_xpath("//*[@id='contentInfo1']")
+
+                                    mobileCode_error_text = driver.find_element_by_xpath("//*[@id='contentInfo1']").text
+
+                                    if mobileCode_error_text == u"错误的邮箱地址或手机号":
+
+                                            #----------------------------------------#
+
+                                            print ("验证码输入错误，请重新输入～" + "\n")
+
+                                            #----------------------------------------#
+
+                                    elif mobileCode_error_text == u"验证码输入不正确。":
+
+                                            #----------------------------------------#
+
+                                            print ("验证码输入错误，请重新输入～" + "\n")
+
+                                            #----------------------------------------#
+
+                                    #我知道了按钮
+                                    driver.find_element_by_xpath("//*[@id='sureId']").click()
+
+                                    sleep(2)
+
+                                except:
+
+                                    pass
+
+                                driver.refresh()
 
                         except:
 
                             pass
-
-                        driver.refresh()
 
                 except:
 
@@ -2088,7 +2064,14 @@ class TestNewResiget(unittest.TestCase):
 
                     driver.switch_to_window(handles)
 
-                    sleep(5)
+                    user_protocol_url = driver.current_url
+
+                    if user_protocol_url == "http://www.51talk.com/page/terms/" or \
+                       user_protocol_url == "https://www.51talk.com/page/terms/":
+
+                       print ("获取用户协议链接正确-->",user_protocol_url)
+
+                    sleep(2)
 
                     driver.close()
 
@@ -2097,6 +2080,8 @@ class TestNewResiget(unittest.TestCase):
             sleep(2)
 
             print ("***********************************************" + "\n")
+
+            driver.close()
 
 #----------------------------------------------------------------------------------------------------------------------#
     #主站注册页面--隐私声明
@@ -2146,7 +2131,14 @@ class TestNewResiget(unittest.TestCase):
 
                     driver.switch_to_window(handles)
 
-                    sleep(5)
+                    privacy_statement_url = driver.current_url
+
+                    if privacy_statement_url == "http://www.51talk.com/page/privacy/" or \
+                       privacy_statement_url == "https://www.51talk.com/page/privacy/":
+
+                       print ("获取隐私声明链接正确-->",privacy_statement_url)
+
+                    sleep(2)
 
                     driver.close()
 
@@ -2155,6 +2147,8 @@ class TestNewResiget(unittest.TestCase):
             sleep(2)
 
             print ("***********************************************" + "\n")
+
+            driver.close()
 
 #----------------------------------------------------------------------------------------------------------------------#
     #主站注册页面--前往登录
@@ -2188,9 +2182,22 @@ class TestNewResiget(unittest.TestCase):
             #前往登录
             driver.find_element_by_xpath("//*[@id='container']/form/div/div/div[8]/a").click()
 
+            goto_login_url = driver.current_url
+
+            if goto_login_url == "http://login.51talk.com/login/index?client=1" or \
+               goto_login_url == "https://login.51talk.com/login/index?client=1":
+
+               print ("获取登录链接正确-->",goto_login_url)
+
             sleep(5)
 
+            driver.back()
+
+            sleep(2)
+
             print ("***********************************************" + "\n")
+
+            driver.close()
 
 #----------------------------------------------------------------------------------------------------------------------#
     #关闭浏览器

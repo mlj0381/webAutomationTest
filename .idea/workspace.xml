@@ -5,21 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9842633-874b-4564-bb0f-78e6ac9daa67" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test51talk_02/FileDir/automation_info.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/configuration_files/accountConfigInformation.py" afterPath="$PROJECT_DIR$/test51talk_02/configuration_files/accountConfigInformation.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/all_51talk_1.py" afterPath="$PROJECT_DIR$/test51talk_02/all_51talk_1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/FileDir/cs_login_success.txt" afterPath="$PROJECT_DIR$/test51talk_02/FileDir/cs_login_success.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/FileDir/cs_resiget_fail.txt" afterPath="$PROJECT_DIR$/test51talk_02/FileDir/cs_resiget_fail.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/FileDir/cs_resiget_success.txt" afterPath="$PROJECT_DIR$/test51talk_02/FileDir/cs_resiget_success.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/configuration_files/dqTxtFile.py" afterPath="$PROJECT_DIR$/test51talk_02/configuration_files/dqTxtFile.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py" afterPath="$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/HomePage/test_aaHomePage.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/HomePage/test_aaHomePage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/NavigationBar/test_aa_NavigationBar.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/NavigationBar/test_aa_NavigationBar.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/HomePage/test_adultHomePage.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/HomePage/test_adultHomePage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/NavigationBar/test_adult_NavigationBar.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/NavigationBar/test_adult_NavigationBar.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/Carousel/test_homeCarousel.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/Carousel/test_homeCarousel.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/HomePage/test_homePage.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/HomePage/test_homePage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/NavigationBar/test_homePageNavigationBar.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/NavigationBar/test_homePageNavigationBar.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkUser/slider_validation/junior_official_website_resiget_slider_validation.py" afterPath="$PROJECT_DIR$/test51talk_02/talkUser/slider_validation/junior_official_website_resiget_slider_validation.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/Login/test_new_login.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/Login/test_new_login.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/Login/test_old_login.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/Login/test_old_login.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/StartPage/test_startPage.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/StartPage/test_startPage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/Resiget/test_new_resiget.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/Resiget/test_new_resiget.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/Resiget/test_old_resiget.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/Resiget/test_old_resiget.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkUser/user_sms_platform.py" afterPath="$PROJECT_DIR$/test51talk_02/talkUser/user_sms_platform.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="webAutomationTest.iws" />
@@ -34,7 +30,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/webAutomationTest$Unittests_in_test_51talk.coverage" NAME="Unittests in test_51talk Coverage Results" MODIFIED="1561398925521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test51talk_02/Rmprogram" />
+    <SUITE FILE_PATH="coverage/webAutomationTest$Unittests_in_test_51talk.coverage" NAME="Unittests in test_51talk Coverage Results" MODIFIED="1561460722555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test51talk_02/Rmprogram" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -42,17 +38,33 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="DatabaseView">
+    <option name="FLATTEN" value="false" />
+    <option name="GROUP_BY_TYPE" value="true" />
+    <option name="SORT_CHILDREN" value="false" />
+    <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="webAutomationTest" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="all_51talk_1.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="all_51talk_1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test51talk_02/all_51talk_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20618556" vertical-offset="2060" max-vertical-offset="3260">
-              <caret line="113" column="60" selection-start-line="113" selection-start-column="60" selection-end-line="113" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3300">
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="driver_configurationFiles.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.14871795" vertical-offset="93" max-vertical-offset="680">
+              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -69,32 +81,36 @@
         <option value="$PROJECT_DIR$/test51talk_02/test_old_login_insert.py" />
         <option value="$PROJECT_DIR$/test51talk_02/talkUser/user_experience_class/user_experience_cadets_return_result.py" />
         <option value="$PROJECT_DIR$/test51talk_02/talkUser/user_file_rw_operation.py" />
-        <option value="$PROJECT_DIR$/test51talk_02/talkUser/user_sms_platform.py" />
         <option value="$PROJECT_DIR$/test51talk_02/Rmprogram/test_51talk.py" />
         <option value="$PROJECT_DIR$/test51talk_02/generation_report/generate_testReports.py" />
         <option value="$PROJECT_DIR$/test51talk_02/generation_report/send_Mail.py" />
         <option value="$PROJECT_DIR$/test51talk_02/configuration_files/configurationFiles.py" />
-        <option value="$PROJECT_DIR$/test51talk_02/talkTest/Resiget/test_new_resiget.py" />
         <option value="$PROJECT_DIR$/test51talk_02/talkTest/AccountSettings/test_account_settings.py" />
         <option value="$PROJECT_DIR$/test51talk_02/talkUser/user_quit_browser.py" />
         <option value="$PROJECT_DIR$/test51talk_02/configuration_files/db_config.py" />
-        <option value="$PROJECT_DIR$/test51talk_02/configuration_files/dqTxtFile.py" />
         <option value="$PROJECT_DIR$/test51talk_02/configuration_files/dqXlsFile.py" />
-        <option value="$PROJECT_DIR$/test51talk_02/configuration_files/accountConfigInformation.py" />
         <option value="$PROJECT_DIR$/test51talk_02/FileDir/cs_login_success.txt" />
         <option value="$PROJECT_DIR$/test51talk_02/FileDir/automation_info.txt" />
         <option value="$PROJECT_DIR$/test51talk_02/talkTest/StartPage/test_startPage.py" />
         <option value="$PROJECT_DIR$/test51talk_02/talkTest/HomePage/test_homePage.py" />
-        <option value="$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py" />
         <option value="$PROJECT_DIR$/test51talk_02/talkTest/HomePage/test_adultHomePage.py" />
         <option value="$PROJECT_DIR$/test51talk_02/talkTest/HomePage/test_aaHomePage.py" />
         <option value="$PROJECT_DIR$/test51talk_02/talkTest/NavigationBar/test_homePageNavigationBar.py" />
         <option value="$PROJECT_DIR$/test51talk_02/talkTest/NavigationBar/test_adult_NavigationBar.py" />
         <option value="$PROJECT_DIR$/test51talk_02/talkTest/NavigationBar/test_aa_NavigationBar.py" />
         <option value="$PROJECT_DIR$/test51talk_02/talkTest/Carousel/test_homeCarousel.py" />
-        <option value="$PROJECT_DIR$/test51talk_02/talkTest/Login/test_new_login.py" />
         <option value="$PROJECT_DIR$/test51talk_02/talkTest/Login/test_old_login.py" />
+        <option value="$PROJECT_DIR$/test51talk_02/configuration_files/accountConfigInformation.py" />
+        <option value="$PROJECT_DIR$/test51talk_02/talkUser/slider_validation/junior_official_website_resiget_slider_validation.py" />
+        <option value="$PROJECT_DIR$/test51talk_02/talkUser/user_sms_platform.py" />
+        <option value="$PROJECT_DIR$/test51talk_02/configuration_files/dqTxtFile.py" />
+        <option value="$PROJECT_DIR$/test51talk_02/FileDir/cs_resiget_fail.txt" />
+        <option value="$PROJECT_DIR$/test51talk_02/talkTest/Resiget/test_new_resiget.py" />
+        <option value="$PROJECT_DIR$/test51talk_02/talkTest/Login/test_new_login.py" />
+        <option value="$PROJECT_DIR$/test51talk_02/FileDir/cs_resiget_success.txt" />
+        <option value="$PROJECT_DIR$/test51talk_02/talkTest/Resiget/test_old_resiget.py" />
         <option value="$PROJECT_DIR$/test51talk_02/all_51talk_1.py" />
+        <option value="$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py" />
       </list>
     </option>
   </component>
@@ -102,10 +118,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1941" />
-    <option name="y" value="-376" />
-    <option name="width" value="1755" />
-    <option name="height" value="1117" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="732" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -130,6 +145,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -180,27 +196,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webAutomationTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webAutomationTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test51talk_02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FileDir" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -454,22 +451,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1941" y="-376" width="1755" height="1117" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="732" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4942717" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4942717" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21098773" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3033033" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="485" y="175" width="309" height="429" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2184466" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49348533" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -478,6 +475,28 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928804" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4942717" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" x="485" y="175" width="309" height="429" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13187702" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49348533" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -500,45 +519,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test51talk_02/generation_report/generate_testReports.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1000">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#36#45#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/generation_report/send_Mail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="1800">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/talkUser/user_file_rw_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="2040">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/all_51talk_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="393" max-vertical-offset="3260">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/talkTest/Login/test_new_login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="19243" max-vertical-offset="43160">
-          <caret line="970" column="0" selection-start-line="970" selection-start-column="0" selection-end-line="970" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test51talk_02/talkUser/user_experience_class/user_experience_cadets_return_result.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="9113" max-vertical-offset="10920">
@@ -557,20 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.263587" vertical-offset="9113" max-vertical-offset="10920">
           <caret line="422" column="53" selection-start-line="422" selection-start-column="53" selection-end-line="422" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/talkUser/user_file_rw_operation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54347825" vertical-offset="360" max-vertical-offset="2040">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/talkUser/user_sms_platform.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.70652175" vertical-offset="500" max-vertical-offset="2040">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -612,24 +578,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/talkTest/Resiget/test_new_resiget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68728524" vertical-offset="0" max-vertical-offset="44120">
-          <caret line="20" column="63" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test51talk_02/talkTest/AccountSettings/test_account_settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.72164947" vertical-offset="360" max-vertical-offset="2360">
           <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/talkTest/StartPage/startPagePopLayer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34819898" vertical-offset="77" max-vertical-offset="660">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -651,13 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3298969" vertical-offset="266" max-vertical-offset="2060">
           <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/accountConfigInformation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7250859" vertical-offset="118" max-vertical-offset="700">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -710,14 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/talkUser/user_quit_browser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7938144" vertical-offset="418" max-vertical-offset="1000">
-          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/unittest/suite.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.9140893" vertical-offset="706" max-vertical-offset="6540">
@@ -729,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="582">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -737,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25842696" vertical-offset="7251" max-vertical-offset="10740">
           <caret line="370" column="0" selection-start-line="370" selection-start-column="0" selection-end-line="370" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -745,9 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47962382" vertical-offset="101" max-vertical-offset="1900">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#76#106#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -755,9 +687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.001044932" vertical-offset="21" max-vertical-offset="2120">
           <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding>
-            <element signature="e#76#106#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -765,9 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39602926" vertical-offset="481" max-vertical-offset="2400">
           <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
-          <folding>
-            <element signature="e#76#106#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -775,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.033639144" vertical-offset="342" max-vertical-offset="2260">
           <caret line="16" column="39" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,9 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7796102" vertical-offset="0" max-vertical-offset="6880">
           <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-          <folding>
-            <element signature="e#76#106#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -793,9 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7308869" vertical-offset="22" max-vertical-offset="6300">
           <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-          <folding>
-            <element signature="e#76#106#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -803,17 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7526237" vertical-offset="18" max-vertical-offset="1700">
           <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-          <folding>
-            <element signature="e#78#108#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26986507" vertical-offset="0" max-vertical-offset="680">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -821,7 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1462905" vertical-offset="0" max-vertical-offset="2860">
           <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -829,9 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.56971514" vertical-offset="0" max-vertical-offset="2320">
           <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding>
-            <element signature="e#76#106#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -839,72 +743,165 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.082474224" vertical-offset="320" max-vertical-offset="2840">
           <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test51talk_02/FileDir/cs_login_success.txt">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551">
           <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test51talk_02/FileDir/cs_login_fail.txt">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1572327" vertical-offset="0" max-vertical-offset="636">
           <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test51talk_02/talkTest/Login/test_old_login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0875" vertical-offset="1705" max-vertical-offset="12760">
+          <caret line="87" column="44" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test51talk_02/FileDir/code.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/accountConfigInformation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.008547009" vertical-offset="115" max-vertical-offset="700">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test51talk_02/talkUser/user_file_rw_operation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61538464" vertical-offset="0" max-vertical-offset="2000">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test51talk_02/talkUser/slider_validation/junior_official_website_resiget_slider_validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7948718" vertical-offset="555" max-vertical-offset="1140">
+          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test51talk_02/talkTest/StartPage/startPagePopLayer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05" vertical-offset="260" max-vertical-offset="660">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test51talk_02/talkUser/user_sms_platform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.35042736" vertical-offset="565" max-vertical-offset="2080">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/dqXlsFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1385" max-vertical-offset="2160">
+          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test51talk_02/FileDir/cs_resiget_fail.txt">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10830325" vertical-offset="0" max-vertical-offset="554">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test51talk_02/talkUser/user_quit_browser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35042736" vertical-offset="415" max-vertical-offset="1000">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/dqTxtFile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3328336" vertical-offset="858" max-vertical-offset="2660">
-          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.50427353" vertical-offset="1305" max-vertical-offset="2640">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
             <element signature="e#60#82#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/dqXlsFile.py">
+    <entry file="file://$PROJECT_DIR$/test51talk_02/talkTest/Resiget/test_new_resiget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3298351" vertical-offset="0" max-vertical-offset="2160">
-          <caret line="15" column="56" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="56" />
-          <folding />
+        <state vertical-scroll-proportion="-2.5299146" vertical-offset="13640" max-vertical-offset="44260">
+          <caret line="608" column="71" selection-start-line="608" selection-start-column="60" selection-end-line="608" selection-end-column="71" />
+          <folding>
+            <element signature="e#75#88#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test51talk_02/talkTest/Login/test_new_login.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45565748" vertical-offset="702" max-vertical-offset="43200">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="54" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.44444445" vertical-offset="10300" max-vertical-offset="43200">
+          <caret line="528" column="55" selection-start-line="528" selection-start-column="55" selection-end-line="528" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/talkTest/Login/test_old_login.py">
+    <entry file="file://$PROJECT_DIR$/test51talk_02/talkTest/Resiget/test_old_resiget.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47753397" vertical-offset="11803" max-vertical-offset="12760">
-          <caret line="613" column="0" selection-start-line="613" selection-start-column="0" selection-end-line="613" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1766" max-vertical-offset="12140">
+          <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
           <folding>
-            <element signature="e#74#89#0" expanded="true" />
+            <element signature="e#71#86#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test51talk_02/FileDir/cs_resiget_success.txt">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test51talk_02/all_51talk_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20618556" vertical-offset="2060" max-vertical-offset="3260">
-          <caret line="113" column="60" selection-start-line="113" selection-start-column="60" selection-end-line="113" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3300">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14871795" vertical-offset="93" max-vertical-offset="680">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding />
         </state>
       </provider>
