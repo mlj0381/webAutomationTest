@@ -17,6 +17,7 @@ def generate_testreports(testunit):
 
     # test_dir = os.getcwd() + '/report/'
     test_dir = rootPath + '/report/'
+
     now_data = time.strftime("%Y-%m-%d-%H-%M-%S_")
     filename_dir = test_dir + now_data + "result.html"
     # fp = file(filename_dir,'wb')
@@ -40,17 +41,24 @@ def send_eport(testreport):
 
     lists = os.listdir(result_dir)
 
-    print (lists)
+    # print (lists)
 
-    time.sleep(5)
-    lists.sort(key= lambda x: os.path.getmtime(result_dir))
+    lists.sort(key= lambda x: os.path.getmtime(result_dir + x))
 
-    print (lists)
     file_name = lists[-1]
 
-    print (file_name)
+    # print (file_name)
 
     file_dir = os.path.join(result_dir,file_name)
 
+    time.sleep(2)
+
     #调发送邮件
     send_mail(file_dir,file_name)
+
+
+# curPath = os.path.abspath(os.path.dirname(__file__))
+# rootPath = os.path.dirname(curPath)
+# test_dir = rootPath + '/report/'
+#
+# send_eport(test_dir)
