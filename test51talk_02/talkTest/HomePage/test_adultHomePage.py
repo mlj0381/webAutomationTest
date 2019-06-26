@@ -101,7 +101,7 @@ class TestAdultHomePage(unittest.TestCase):
             title_url_3 = driver.current_url
             sleep(1)
 
-            print (text_url_3+u"的'标签链接'是：" + title_url_3 + '\n')
+            print (text_url_3+"的标签链接是：" + title_url_3 + '\n')
             sleep(1)
 
         print ("******************************************************************************************************************" + "\n")

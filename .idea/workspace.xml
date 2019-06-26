@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9842633-874b-4564-bb0f-78e6ac9daa67" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/all_51talk_1.py" afterPath="$PROJECT_DIR$/test51talk_02/all_51talk_1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py" afterPath="$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/talkTest/HomePage/test_adultHomePage.py" afterPath="$PROJECT_DIR$/test51talk_02/talkTest/HomePage/test_adultHomePage.py" />
     </list>
     <ignored path="webAutomationTest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,7 +43,7 @@
       <file leaf-file-name="driver_configurationFiles.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0051457975" vertical-offset="297" max-vertical-offset="880">
+            <state vertical-scroll-proportion="0.005154639" vertical-offset="297" max-vertical-offset="880">
               <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
               <folding />
             </state>
@@ -466,7 +465,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -879,7 +878,7 @@
         <state vertical-scroll-proportion="-0.44082332" vertical-offset="497" max-vertical-offset="1380">
           <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
           <folding>
-            <element signature="e#36#45#0" expanded="true" />
+            <element signature="e#36#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -902,7 +901,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0051457975" vertical-offset="297" max-vertical-offset="880">
+        <state vertical-scroll-proportion="0.005154639" vertical-offset="297" max-vertical-offset="880">
           <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
           <folding />
         </state>
