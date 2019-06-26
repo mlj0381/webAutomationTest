@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e9842633-874b-4564-bb0f-78e6ac9daa67" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/all_51talk_1.py" afterPath="$PROJECT_DIR$/test51talk_02/all_51talk_1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py" afterPath="$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py" />
     </list>
     <ignored path="webAutomationTest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,21 +41,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="driver_configurationFiles.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="driver_configurationFiles.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="297" max-vertical-offset="880">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0051457975" vertical-offset="297" max-vertical-offset="880">
+              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="all_51talk_1.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="all_51talk_1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test51talk_02/all_51talk_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45111492" vertical-offset="937" max-vertical-offset="3300">
-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="937" max-vertical-offset="3300">
+              <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -101,8 +101,8 @@
         <option value="$PROJECT_DIR$/test51talk_02/talkTest/Resiget/test_old_resiget.py" />
         <option value="$PROJECT_DIR$/test51talk_02/generation_report/generate_testReports.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py" />
         <option value="$PROJECT_DIR$/test51talk_02/all_51talk_1.py" />
+        <option value="$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py" />
       </list>
     </option>
   </component>
@@ -892,18 +892,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py">
+    <entry file="file://$PROJECT_DIR$/test51talk_02/all_51talk_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="297" max-vertical-offset="880">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="937" max-vertical-offset="3300">
+          <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test51talk_02/all_51talk_1.py">
+    <entry file="file://$PROJECT_DIR$/test51talk_02/configuration_files/driver_configurationFiles.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45111492" vertical-offset="937" max-vertical-offset="3300">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0051457975" vertical-offset="297" max-vertical-offset="880">
+          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
           <folding />
         </state>
       </provider>
