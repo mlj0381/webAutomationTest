@@ -57,7 +57,7 @@ def creatsuite():
     testunit = unittest.TestSuite()
 
     '''启动页弹出层切换'''
-    # testunit.addTest(test_startPage.TestStartPage("test_start_page"))
+    testunit.addTest(test_startPage.TestStartPage("test_start_page"))
 
     '''主站模块TAB切换'''
     # testunit.addTest(test_homePage.TestHomePage("test_homepage_tabpage_switch"))
